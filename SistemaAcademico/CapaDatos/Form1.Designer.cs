@@ -1,6 +1,6 @@
-﻿namespace SistemaAcademico.CapaPresentacion
+﻿namespace CapaDatos
 {
-    partial class FormLogin
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "FormLogin";
+            this.Text = "Form1";
         }
 
         #endregion
     }
 }
+
