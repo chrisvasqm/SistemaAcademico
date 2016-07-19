@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FormLoginProf : Form
+    public partial class FormRegistroEstudiante : Form
     {
-        public FormLoginProf()
+        public FormRegistroEstudiante()
         {
             InitializeComponent();
         }
@@ -20,14 +20,7 @@ namespace CapaPresentacion
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormInicio newForm = new FormInicio();
-            newForm.Show();
-        }
-
-        private void btnAcceder_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormEvaluacion newForm = new FormEvaluacion();
+            FormLoginEst newForm = new FormLoginEst();
             newForm.Show();
         }
     }

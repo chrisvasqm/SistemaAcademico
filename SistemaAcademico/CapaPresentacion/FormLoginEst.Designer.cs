@@ -91,6 +91,7 @@
             this.btnAcceder.TabIndex = 5;
             this.btnAcceder.Text = "ACCEDER";
             this.btnAcceder.UseVisualStyleBackColor = true;
+            this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
             // 
             // linkLabel
             // 
@@ -101,6 +102,7 @@
             this.linkLabel.TabIndex = 6;
             this.linkLabel.TabStop = true;
             this.linkLabel.Text = "Registrate!";
+            this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
             // 
             // btnAtras
             // 

@@ -28,5 +28,19 @@ namespace CapaPresentacion
             FormInicio newForm = new FormInicio();
             newForm.Show();
         }
+
+        private void btnAcceder_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormPanelEstudiante newForm = new FormPanelEstudiante();
+            newForm.Show();
+        }
+
+        private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            FormRegistroEstudiante newForm = new FormRegistroEstudiante();
+            newForm.Show();
+        }
     }
 }

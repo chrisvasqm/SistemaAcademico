@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class FormConsultaNotas
+    partial class FormPanelEstudiante
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsultaNotas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPanelEstudiante));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGrid = new System.Windows.Forms.DataGridView();
@@ -130,7 +130,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(905, 494);
+            this.tabPage2.Size = new System.Drawing.Size(913, 472);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Seleccion de Materias";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@
             this.groupBox2.Size = new System.Drawing.Size(474, 128);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Seleccionar materias";
+            this.groupBox2.Text = "Materias";
             // 
             // comboBox1
             // 
@@ -169,7 +169,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(21, 42);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(212, 20);
             this.textBox2.TabIndex = 3;
             // 
             // label3
@@ -192,9 +192,9 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(264, 19);
+            this.btnAgregar.Location = new System.Drawing.Point(264, 26);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(182, 88);
+            this.btnAgregar.Size = new System.Drawing.Size(182, 81);
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "AGREGAR";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -210,7 +210,7 @@
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
-            // FormConsultaNotas
+            // FormPanelEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -218,7 +218,7 @@
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.tabControl1);
             this.MaximizeBox = false;
-            this.Name = "FormConsultaNotas";
+            this.Name = "FormPanelEstudiante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel de Estudiante";
             this.tabControl1.ResumeLayout(false);

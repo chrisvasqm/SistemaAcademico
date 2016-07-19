@@ -45,6 +45,7 @@
             this.btnAcceder.TabIndex = 10;
             this.btnAcceder.Text = "ACCEDER";
             this.btnAcceder.UseVisualStyleBackColor = true;
+            this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
             // 
             // txtContra
             // 
