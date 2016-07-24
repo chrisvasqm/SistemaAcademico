@@ -46,14 +46,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="CapaDato\Connection.cs" />
+    <Compile Include="CapaDato\DLogin.cs" />
+    <Compile Include="CapaNegocio\Login.cs" />
+    <Compile Include="CapaNegocio\NLogin.cs" />
+    <Compile Include="CapaPresentacion\FormEvaluacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CapaPresentacion\FormEvaluacion.Designer.cs">
+      <DependentUpon>FormEvaluacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\FormInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\FormInicio.Designer.cs">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\FormLoginEst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\FormLoginEst.Designer.cs">
+      <DependentUpon>FormLoginEst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\FormLoginProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\FormLoginProf.Designer.cs">
+      <DependentUpon>FormLoginProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\FormPanelEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\FormPanelEstudiante.Designer.cs">
+      <DependentUpon>FormPanelEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\FormRegistroEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\FormRegistroEstudiante.Designer.cs">
+      <DependentUpon>FormRegistroEstudiante.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CapaPresentacion\FormEvaluacion.resx">
+      <DependentUpon>FormEvaluacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\FormInicio.resx">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\FormLoginEst.resx">
+      <DependentUpon>FormLoginEst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\FormLoginProf.resx">
+      <DependentUpon>FormLoginProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\FormPanelEstudiante.resx">
+      <DependentUpon>FormPanelEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\FormRegistroEstudiante.resx">
+      <DependentUpon>FormRegistroEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,12 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CapaPresentacion\CapaPresentacion.csproj">
-      <Project>{97ea7da4-2aac-44a9-9187-9db896dc0368}</Project>
-      <Name>CapaPresentacion</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
