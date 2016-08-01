@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="db_finalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_login">
+          <Key>
+            <PropertyRef Name="id_login" />
+          </Key>
+          <Property Name="id_login" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="50" />
+          <Property Name="contraseña" Type="varchar" MaxLength="50" />
+          <Property Name="matricula" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_loginprof">
+          <Key>
+            <PropertyRef Name="id_prof" />
+          </Key>
+          <Property Name="id_prof" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario_prof" Type="varchar" MaxLength="50" />
+          <Property Name="contraseña_prof" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_matseleccion">
+          <Key>
+            <PropertyRef Name="id_matseleccion" />
+          </Key>
+          <Property Name="id_matseleccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="matricula" Type="varchar" MaxLength="50" />
+          <Property Name="materia" Type="varchar" MaxLength="50" />
+          <Property Name="nota1" Type="int" />
+          <Property Name="nota2" Type="int" />
+          <Property Name="nota3" Type="int" />
+          <Property Name="practica" Type="int" />
+          <Property Name="asistencia" Type="int" />
+          <Property Name="notafinal" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_pensum">
+          <Key>
+            <PropertyRef Name="id_pensum" />
+          </Key>
+          <Property Name="id_pensum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="clave" Type="varchar" MaxLength="50" />
+          <Property Name="asignatura" Type="varchar" MaxLength="50" />
+          <Property Name="prerequisito" Type="varchar" MaxLength="50" />
+          <Property Name="credito" Type="int" />
+        </EntityType>
+        <EntityContainer Name="db_finalModelStoreContainer">
+          <EntitySet Name="tbl_login" EntityType="Self.tbl_login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_loginprof" EntityType="Self.tbl_loginprof" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_matseleccion" EntityType="Self.tbl_matseleccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_pensum" EntityType="Self.tbl_pensum" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_finalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_login">
+          <Key>
+            <PropertyRef Name="id_login" />
+          </Key>
+          <Property Name="id_login" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="matricula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_matseleccion">
+          <Key>
+            <PropertyRef Name="id_matseleccion" />
+          </Key>
+          <Property Name="id_matseleccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="matricula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="materia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nota1" Type="Int32" />
+          <Property Name="nota2" Type="Int32" />
+          <Property Name="nota3" Type="Int32" />
+          <Property Name="practica" Type="Int32" />
+          <Property Name="asistencia" Type="Int32" />
+          <Property Name="notafinal" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_pensum">
+          <Key>
+            <PropertyRef Name="id_pensum" />
+          </Key>
+          <Property Name="id_pensum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="clave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="asignatura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prerequisito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="credito" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="FinalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_login" EntityType="Self.tbl_login" />
+          <EntitySet Name="tbl_matseleccion" EntityType="Self.tbl_matseleccion" />
+          <EntitySet Name="tbl_pensum" EntityType="Self.tbl_pensum" />
+          <EntitySet Name="tbl_loginprof" EntityType="db_finalModel.tbl_loginprof" />
+        </EntityContainer>
+        <EntityType Name="tbl_loginprof">
+          <Key>
+            <PropertyRef Name="id_prof" />
+          </Key>
+          <Property Name="id_prof" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario_prof" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contraseña_prof" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_finalModelStoreContainer" CdmEntityContainer="FinalEntities">
+          <EntitySetMapping Name="tbl_login">
+            <EntityTypeMapping TypeName="db_finalModel.tbl_login">
+              <MappingFragment StoreEntitySet="tbl_login">
+                <ScalarProperty Name="id_login" ColumnName="id_login" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+                <ScalarProperty Name="matricula" ColumnName="matricula" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_matseleccion">
+            <EntityTypeMapping TypeName="db_finalModel.tbl_matseleccion">
+              <MappingFragment StoreEntitySet="tbl_matseleccion">
+                <ScalarProperty Name="id_matseleccion" ColumnName="id_matseleccion" />
+                <ScalarProperty Name="matricula" ColumnName="matricula" />
+                <ScalarProperty Name="materia" ColumnName="materia" />
+                <ScalarProperty Name="nota1" ColumnName="nota1" />
+                <ScalarProperty Name="nota2" ColumnName="nota2" />
+                <ScalarProperty Name="nota3" ColumnName="nota3" />
+                <ScalarProperty Name="practica" ColumnName="practica" />
+                <ScalarProperty Name="asistencia" ColumnName="asistencia" />
+                <ScalarProperty Name="notafinal" ColumnName="notafinal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_pensum">
+            <EntityTypeMapping TypeName="db_finalModel.tbl_pensum">
+              <MappingFragment StoreEntitySet="tbl_pensum">
+                <ScalarProperty Name="id_pensum" ColumnName="id_pensum" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="asignatura" ColumnName="asignatura" />
+                <ScalarProperty Name="prerequisito" ColumnName="prerequisito" />
+                <ScalarProperty Name="credito" ColumnName="credito" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_loginprof">
+            <EntityTypeMapping TypeName="db_finalModel.tbl_loginprof">
+              <MappingFragment StoreEntitySet="tbl_loginprof">
+                <ScalarProperty Name="contraseña_prof" ColumnName="contraseña_prof" />
+                <ScalarProperty Name="usuario_prof" ColumnName="usuario_prof" />
+                <ScalarProperty Name="id_prof" ColumnName="id_prof" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
