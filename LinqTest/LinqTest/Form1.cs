@@ -5,8 +5,7 @@ using System.Windows.Forms;
 namespace LinqTest
 {
     public partial class Form1 : Form
-    {
-        // Instance of the Repo so it's easy to reuse our code
+    {        
         StudentRepository repository = new StudentRepository();
 
         public Form1()

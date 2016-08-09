@@ -4,13 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbAcademicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="dbAcademicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AccountType">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Type" Type="nchar" MaxLength="10" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -39,6 +39,19 @@
           <Property Name="Credits" Type="int" />
           <Property Name="isApproved" Type="bit" />
         </EntityType>
+        <EntityType Name="Qualification">
+          <Key>
+            <PropertyRef Name="QualificationID" />
+          </Key>
+          <Property Name="QualificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Test" Type="int" />
+          <Property Name="Test2" Type="int" />
+          <Property Name="Test3" Type="int" />
+          <Property Name="Practice" Type="int" />
+          <Property Name="Attendance" Type="int" />
+          <Property Name="Record" Type="int" />
+          <Property Name="PensumID" Type="int" />
+        </EntityType>
         <EntityType Name="Students">
           <Key>
             <PropertyRef Name="ID" />
@@ -50,28 +63,20 @@
           <Property Name="Age" Type="int" />
           <Property Name="Address" Type="varchar" MaxLength="50" />
           <Property Name="IdentityCardNum" Type="varchar" MaxLength="50" />
-          <Property Name="GenderID" Type="int" />
+          <Property Name="GenderID" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="dbAcademicModelStoreContainer">
           <EntitySet Name="AccountType" EntityType="Self.AccountType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pensum" EntityType="Self.Pensum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Qualification" EntityType="Self.Qualification" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbAcademicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="AccountType">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="LoginID" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="Gender">
           <Key>
             <PropertyRef Name="ID" />
@@ -87,6 +92,7 @@
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="AccountTypeID" Type="Int32" />
+          <NavigationProperty Name="AccountType" Relationship="dbAcademicModel.AccountTypeLogin" FromRole="Login" ToRole="AccountType" />
         </EntityType>
         <EntityType Name="Pensum">
           <Key>
@@ -98,6 +104,7 @@
           <Property Name="Prerequisite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Credits" Type="Int32" />
           <Property Name="isApproved" Type="Boolean" />
+          <NavigationProperty Name="Qualifications" Relationship="dbAcademicModel.PensumQualification" FromRole="Pensum" ToRole="Qualification" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -110,11 +117,10 @@
           <Property Name="Age" Type="Int32" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="IdentityCardNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="GenderID" Type="Int32" />
+          <Property Name="GenderID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Gender" Relationship="dbAcademicModel.GenderStudent" FromRole="Student" ToRole="Gender" />
         </EntityType>
         <EntityContainer Name="AcademicEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="AccountTypes" EntityType="Self.AccountType" />
           <EntitySet Name="Genders" EntityType="Self.Gender" />
           <EntitySet Name="Logins" EntityType="Self.Login" />
           <EntitySet Name="Pensums" EntityType="Self.Pensum" />
@@ -123,13 +129,19 @@
             <End Role="Gender" EntitySet="Genders" />
             <End Role="Student" EntitySet="Students" />
           </AssociationSet>
-          <AssociationSet Name="LoginAccountType" Association="dbAcademicModel.LoginAccountType">
-            <End Role="Login" EntitySet="Logins" />
+          <EntitySet Name="AccountTypes" EntityType="dbAcademicModel.AccountType" />
+          <EntitySet Name="Qualifications" EntityType="dbAcademicModel.Qualification" />
+          <AssociationSet Name="AccountTypeLogin" Association="dbAcademicModel.AccountTypeLogin">
             <End Role="AccountType" EntitySet="AccountTypes" />
+            <End Role="Login" EntitySet="Logins" />
+          </AssociationSet>
+          <AssociationSet Name="PensumQualification" Association="dbAcademicModel.PensumQualification">
+            <End Role="Pensum" EntitySet="Pensums" />
+            <End Role="Qualification" EntitySet="Qualifications" />
           </AssociationSet>
         </EntityContainer>
         <Association Name="GenderStudent">
-          <End Type="dbAcademicModel.Gender" Role="Gender" Multiplicity="0..1" />
+          <End Type="dbAcademicModel.Gender" Role="Gender" Multiplicity="1" />
           <End Type="dbAcademicModel.Student" Role="Student" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Gender">
@@ -140,9 +152,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="LoginAccountType">
-          <End Type="dbAcademicModel.Login" Role="Login" Multiplicity="0..1" />
-          <End Type="dbAcademicModel.AccountType" Role="AccountType" Multiplicity="*" />
+        <EntityType Name="AccountType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Logins" Relationship="dbAcademicModel.AccountTypeLogin" FromRole="AccountType" ToRole="Login" />
+        </EntityType>
+        <EntityType Name="Qualification">
+          <Key>
+            <PropertyRef Name="QualificationID" />
+          </Key>
+          <Property Name="QualificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Test" Type="Int32" />
+          <Property Name="Test2" Type="Int32" />
+          <Property Name="Test3" Type="Int32" />
+          <Property Name="Practice" Type="Int32" />
+          <Property Name="Attendance" Type="Int32" />
+          <Property Name="Record" Type="Int32" />
+          <Property Name="PensumID" Type="Int32" />
+          <NavigationProperty Name="Pensum" Relationship="dbAcademicModel.PensumQualification" FromRole="Qualification" ToRole="Pensum" />
+        </EntityType>
+        <Association Name="AccountTypeLogin">
+          <End Type="dbAcademicModel.AccountType" Role="AccountType" Multiplicity="0..1" />
+          <End Type="dbAcademicModel.Login" Role="Login" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AccountType">
               <PropertyRef Name="ID" />
@@ -152,20 +186,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="PensumQualification">
+          <End Type="dbAcademicModel.Pensum" Role="Pensum" Multiplicity="0..1" />
+          <End Type="dbAcademicModel.Qualification" Role="Qualification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pensum">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Qualification">
+              <PropertyRef Name="PensumID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="dbAcademicModelStoreContainer" CdmEntityContainer="AcademicEntities">
-          <EntitySetMapping Name="AccountTypes">
-            <EntityTypeMapping TypeName="dbAcademicModel.AccountType">
-              <MappingFragment StoreEntitySet="AccountType">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Genders">
             <EntityTypeMapping TypeName="dbAcademicModel.Gender">
               <MappingFragment StoreEntitySet="Gender">
@@ -207,6 +245,28 @@
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="IdentityCardNum" ColumnName="IdentityCardNum" />
                 <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountTypes">
+            <EntityTypeMapping TypeName="dbAcademicModel.AccountType">
+              <MappingFragment StoreEntitySet="AccountType">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Qualifications">
+            <EntityTypeMapping TypeName="dbAcademicModel.Qualification">
+              <MappingFragment StoreEntitySet="Qualification">
+                <ScalarProperty Name="PensumID" ColumnName="PensumID" />
+                <ScalarProperty Name="Record" ColumnName="Record" />
+                <ScalarProperty Name="Attendance" ColumnName="Attendance" />
+                <ScalarProperty Name="Practice" ColumnName="Practice" />
+                <ScalarProperty Name="Test3" ColumnName="Test3" />
+                <ScalarProperty Name="Test2" ColumnName="Test2" />
+                <ScalarProperty Name="Test" ColumnName="Test" />
+                <ScalarProperty Name="QualificationID" ColumnName="QualificationID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

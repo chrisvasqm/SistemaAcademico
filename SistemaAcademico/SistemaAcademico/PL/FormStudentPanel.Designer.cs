@@ -1,6 +1,6 @@
 ﻿namespace PL
 {
-    partial class FormPanelEstudiante
+    partial class FormStudentPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPanelEstudiante));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStudentPanel));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGrid = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEnrollment = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGrid2 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cmbMat = new System.Windows.Forms.ComboBox();
+            this.txtMat2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -86,7 +86,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtEnrollment);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(311, 6);
@@ -96,22 +96,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda";
             // 
-            // textBox1
+            // txtEnrollment
             // 
-            this.textBox1.Location = new System.Drawing.Point(18, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtEnrollment.Location = new System.Drawing.Point(18, 51);
+            this.txtEnrollment.Name = "txtEnrollment";
+            this.txtEnrollment.Size = new System.Drawing.Size(100, 20);
+            this.txtEnrollment.TabIndex = 0;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(137, 31);
+            this.btnBuscar.Location = new System.Drawing.Point(136, 40);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(122, 40);
             this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label1
             // 
@@ -145,8 +145,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.cmbMat);
+            this.groupBox2.Controls.Add(this.txtMat2);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btnAgregar);
@@ -157,20 +157,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Materias";
             // 
-            // comboBox1
+            // cmbMat
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(21, 86);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(212, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbMat.FormattingEnabled = true;
+            this.cmbMat.Location = new System.Drawing.Point(21, 86);
+            this.cmbMat.Name = "cmbMat";
+            this.cmbMat.Size = new System.Drawing.Size(212, 21);
+            this.cmbMat.TabIndex = 4;
             // 
-            // textBox2
+            // txtMat2
             // 
-            this.textBox2.Location = new System.Drawing.Point(21, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtMat2.Location = new System.Drawing.Point(21, 42);
+            this.txtMat2.Name = "txtMat2";
+            this.txtMat2.Size = new System.Drawing.Size(212, 20);
+            this.txtMat2.TabIndex = 3;
             // 
             // label3
             // 
@@ -192,9 +192,9 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(264, 26);
+            this.btnAgregar.Location = new System.Drawing.Point(263, 41);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(182, 81);
+            this.btnAgregar.Size = new System.Drawing.Size(182, 66);
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "AGREGAR";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -210,7 +210,7 @@
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
-            // FormPanelEstudiante
+            // FormStudentPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -218,7 +218,7 @@
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.tabControl1);
             this.MaximizeBox = false;
-            this.Name = "FormPanelEstudiante";
+            this.Name = "FormStudentPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel de Estudiante";
             this.tabControl1.ResumeLayout(false);
@@ -240,14 +240,14 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGrid;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEnrollment;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGrid2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox cmbMat;
+        private System.Windows.Forms.TextBox txtMat2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAgregar;

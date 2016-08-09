@@ -1,6 +1,6 @@
 ﻿namespace PL
 {
-    partial class FormRegistroEstudiante
+    partial class FormStudentRegister
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistroEstudiante));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStudentRegister));
             this.btnAtras = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -104,10 +104,11 @@
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(179, 69);
             this.btnCrear.TabIndex = 19;
-            this.btnCrear.Text = "Crear cuenta";
+            this.btnCrear.Text = "CREAR CUENTA";
             this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
-            // FormRegistroEstudiante
+            // FormStudentRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,7 +122,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAtras);
             this.MaximizeBox = false;
-            this.Name = "FormRegistroEstudiante";
+            this.Name = "FormStudentRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Estudiante";
             this.ResumeLayout(false);

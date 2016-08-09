@@ -1,6 +1,6 @@
 ﻿namespace PL
 {
-    partial class FormEvaluacion
+    partial class FormTeacherPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEvaluacion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTeacherPanel));
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dataGrid = new System.Windows.Forms.DataGridView();
             this.txtMatricula = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMateria = new System.Windows.Forms.ComboBox();
+            this.cmbMateria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEvaluar = new System.Windows.Forms.Button();
@@ -62,7 +62,7 @@
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
+            this.btnBuscar.Click += new System.EventHandler(this.btnGuardar);
             // 
             // dataGrid
             // 
@@ -82,7 +82,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtMateria);
+            this.groupBox1.Controls.Add(this.cmbMateria);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtMatricula);
@@ -103,13 +103,13 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Materia:";
             // 
-            // txtMateria
+            // cmbMateria
             // 
-            this.txtMateria.FormattingEnabled = true;
-            this.txtMateria.Location = new System.Drawing.Point(139, 50);
-            this.txtMateria.Name = "txtMateria";
-            this.txtMateria.Size = new System.Drawing.Size(141, 21);
-            this.txtMateria.TabIndex = 4;
+            this.cmbMateria.FormattingEnabled = true;
+            this.cmbMateria.Location = new System.Drawing.Point(139, 50);
+            this.cmbMateria.Name = "cmbMateria";
+            this.cmbMateria.Size = new System.Drawing.Size(141, 21);
+            this.cmbMateria.TabIndex = 4;
             // 
             // label1
             // 
@@ -148,6 +148,7 @@
             this.btnEvaluar.TabIndex = 14;
             this.btnEvaluar.Text = "EVALUAR";
             this.btnEvaluar.UseVisualStyleBackColor = true;
+            this.btnEvaluar.Click += new System.EventHandler(this.btnEvaluar_Click);
             // 
             // label7
             // 
@@ -240,7 +241,7 @@
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
-            // FormEvaluacion
+            // FormTeacherPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -250,7 +251,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGrid);
             this.MinimizeBox = false;
-            this.Name = "FormEvaluacion";
+            this.Name = "FormTeacherPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Evaluacion";
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
@@ -269,7 +270,7 @@
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox txtMateria;
+        private System.Windows.Forms.ComboBox cmbMateria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;

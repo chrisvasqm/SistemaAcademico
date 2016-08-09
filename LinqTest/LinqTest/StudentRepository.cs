@@ -32,25 +32,23 @@ namespace LinqTest
         {             
             return dataBase.tbl_login.Where(tableColumn => tableColumn.id_login == idValue).ToList();
         }
+
         // WORK IN PROGRESS, DO NOT TOUCH
         public void Update (tbl_login updateValues)
         {
-            
+            var estudiante = new tbl_login
+            {
+                id_login = updateValues.id_login,
+                usuario = updateValues.usuario
+            };
 
+            var state = dataBase.Entry(estudiante).State;
+            if (state == EntityState.Detached)
+                dataBase.tbl_login.Attach(estudiante);
 
-            //var estudiante = new tbl_login
-            //{
-            //    id_login = updateValues.id_login,
-            //    usuario = updateValues.usuario
-            //};
-
-            //var state = dataBase.Entry(estudiante).State;
-            //if (state == EntityState.Detached)
-            //    dataBase.tbl_login.Attach(estudiante);
-
-            //dataBase.tbl_login.Attach(estudiante);
-            //dataBase.Entry(estudiante).Property(tableColumn => tableColumn.usuario).IsModified = true;
-            //dataBase.SaveChanges();
+            dataBase.tbl_login.Attach(estudiante);
+            dataBase.Entry(estudiante).Property(tableColumn => tableColumn.usuario).IsModified = true;
+            dataBase.SaveChanges();
         }
         // WORK IN PROGRESS, DO NOT TOUCH
     }

@@ -57,7 +57,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountType.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\EnumService.cs" />
+    <Compile Include="BLL\LoginServices.cs" />
+    <Compile Include="DAL\AccountTypeRepository.cs" />
+    <Compile Include="DAL\PensumRepository.cs" />
     <Compile Include="DAL\StudentRepository.cs" />
+    <Compile Include="DAL\TeacherRepository.cs" />
+    <Compile Include="Gender.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,11 +87,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="PL\FormEvaluacion.cs">
+    <Compile Include="Pensum.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FormTeacherPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\FormEvaluacion.Designer.cs">
-      <DependentUpon>FormEvaluacion.cs</DependentUpon>
+    <Compile Include="PL\FormTeacherPanel.Designer.cs">
+      <DependentUpon>FormTeacherPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FormLogin.cs">
       <SubType>Form</SubType>
@@ -85,31 +102,37 @@
     <Compile Include="PL\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\FormPanelEstudiante.cs">
+    <Compile Include="PL\FormStudentPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\FormPanelEstudiante.Designer.cs">
-      <DependentUpon>FormPanelEstudiante.cs</DependentUpon>
+    <Compile Include="PL\FormStudentPanel.Designer.cs">
+      <DependentUpon>FormStudentPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\FormRegistroEstudiante.cs">
+    <Compile Include="PL\FormStudentRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\FormRegistroEstudiante.Designer.cs">
-      <DependentUpon>FormRegistroEstudiante.cs</DependentUpon>
+    <Compile Include="PL\FormStudentRegister.Designer.cs">
+      <DependentUpon>FormStudentRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="PL\FormEvaluacion.resx">
-      <DependentUpon>FormEvaluacion.cs</DependentUpon>
+    <Compile Include="Qualification.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Student.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="PL\FormTeacherPanel.resx">
+      <DependentUpon>FormTeacherPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\FormPanelEstudiante.resx">
-      <DependentUpon>FormPanelEstudiante.cs</DependentUpon>
+    <EmbeddedResource Include="PL\FormStudentPanel.resx">
+      <DependentUpon>FormStudentPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\FormRegistroEstudiante.resx">
-      <DependentUpon>FormRegistroEstudiante.cs</DependentUpon>
+    <EmbeddedResource Include="PL\FormStudentRegister.resx">
+      <DependentUpon>FormStudentRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,9 +164,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
