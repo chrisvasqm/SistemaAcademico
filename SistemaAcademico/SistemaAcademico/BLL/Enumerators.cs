@@ -6,6 +6,6 @@ namespace SistemaAcademico.BLL
         Student = 1,
         Teacher,
         Admin,
-        Error
+        Error 
     }
 }

@@ -1,6 +1,7 @@
-﻿using SistemaAcademico.BLL;
+﻿
 using System;
 using System.Windows.Forms;
+using SistemaAcademico.BLL;
 
 namespace PL
 {
@@ -13,14 +14,10 @@ namespace PL
         }
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            FillComboBox();
-        }
-        private void FillComboBox()
-        {
             cmbAccountType.DataSource = _loginServices.GetLoginType();
             cmbAccountType.DisplayMember = "Type";
             cmbAccountType.ValueMember = "ID";
-        }
+        }        
         private void btnAcceder_Click(object sender, EventArgs e)
         {
             Login();
@@ -32,13 +29,15 @@ namespace PL
             if (loginResponse == TypeOfAccount.Student)
                 ShowStudentForm();
             else if (loginResponse == TypeOfAccount.Teacher)
-                ShowTacherForm();
+                ShowTeacherForm();
             else if (loginResponse == TypeOfAccount.Error)
                 MessageBox.Show("Wrong username, password or account type");
         }
         private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShowStudentRegisterForm();
+            this.Hide();
+            var StudentRegForm = new FormStudentRegister();
+            StudentRegForm.Show();
         }
         private void ShowStudentForm()
         {
@@ -46,17 +45,11 @@ namespace PL
             var StudentForm = new FormStudentPanel();
             StudentForm.Show();
         }       
-        private void ShowTacherForm()
+        private void ShowTeacherForm()
         {
             this.Hide();
             var TeacherForm = new FormTeacherPanel();
             TeacherForm.Show();
-        }
-        private void ShowStudentRegisterForm()
-        {
-            this.Hide();
-            var newForm = new FormStudentRegister();
-            newForm.Show();
-        }
+        }        
     }
 }

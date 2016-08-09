@@ -60,12 +60,11 @@
     <Compile Include="AccountType.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="BLL\EnumService.cs" />
+    <Compile Include="BLL\Enumerators.cs" />
     <Compile Include="BLL\LoginServices.cs" />
     <Compile Include="DAL\AccountTypeRepository.cs" />
     <Compile Include="DAL\PensumRepository.cs" />
-    <Compile Include="DAL\StudentRepository.cs" />
-    <Compile Include="DAL\TeacherRepository.cs" />
+    <Compile Include="DAL\LoginRepository.cs" />
     <Compile Include="Gender.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

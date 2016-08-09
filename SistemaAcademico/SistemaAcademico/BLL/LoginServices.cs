@@ -5,16 +5,17 @@ namespace SistemaAcademico.BLL
 {
     public class LoginServices
     {
-        private StudentRepository _StudentRepository = new StudentRepository();
-        private TeacherRepository _TeacherRepository = new TeacherRepository();
+        private LoginRepository _LoginRepository = new LoginRepository();
         private AccountTypeRepository _AccountRepository = new AccountTypeRepository();
         public TypeOfAccount ValidateAccountType(string username, string password, int comboValue)
         {
-            if (_StudentRepository.VerifyStudent(username, password, comboValue))
+            var user = _LoginRepository.VerifyLogin(username, password);
+
+            if (user.AccountTypeID == (int)TypeOfAccount.Student && user.AccountTypeID == comboValue)
                 return TypeOfAccount.Student;
-            else if (_TeacherRepository.VerifyTeacher(username, password, comboValue))
+            else if (user.AccountTypeID == (int)TypeOfAccount.Teacher && user.AccountTypeID == comboValue)
                 return TypeOfAccount.Teacher;
-            //TODO: Add other types of accounts
+
             return TypeOfAccount.Error;
         }
         public List<AccountType> GetLoginType()     {
