@@ -1,15 +1,13 @@
-﻿using SistemaAcademico.DAL;
+﻿
 using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
 using System.Windows.Forms;
+using SistemaAcademico.BLL;
 
 namespace PL
 {
     public partial class FormTeacherPanel : Form
     {
-        private PensumRepository _PensumRepository = new PensumRepository();
+        private StudentServices _StudentService = new StudentServices();
 
     
         public FormTeacherPanel()
@@ -36,7 +34,7 @@ namespace PL
 
         private void FormTeacherPanel_Load(object sender, EventArgs e)
         {
-            cmbMateria.DataSource = _PensumRepository.GetPensumSubjects();
+            cmbMateria.DataSource = _StudentService.GetSubjects();
             cmbMateria.DisplayMember = "Subject";
             cmbMateria.ValueMember = "Subject";
         }
