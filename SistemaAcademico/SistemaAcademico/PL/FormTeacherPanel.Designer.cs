@@ -254,6 +254,7 @@
             this.Name = "FormTeacherPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Evaluacion";
+            this.Load += new System.EventHandler(this.FormTeacherPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

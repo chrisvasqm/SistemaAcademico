@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="BLL\Enumerators.cs" />
     <Compile Include="BLL\LoginServices.cs" />
+    <Compile Include="BLL\StudentServices.cs" />
     <Compile Include="DAL\AccountTypeRepository.cs" />
     <Compile Include="DAL\PensumRepository.cs" />
     <Compile Include="DAL\LoginRepository.cs" />

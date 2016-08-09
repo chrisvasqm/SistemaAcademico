@@ -7,6 +7,7 @@ namespace SistemaAcademico.BLL
     {
         private LoginRepository _LoginRepository = new LoginRepository();
         private AccountTypeRepository _AccountRepository = new AccountTypeRepository();
+        private PensumRepository _PensumRepository = new PensumRepository();
         public TypeOfAccount ValidateAccountType(string username, string password, int comboValue)
         {
             var user = _LoginRepository.VerifyLogin(username, password);
@@ -18,9 +19,12 @@ namespace SistemaAcademico.BLL
 
             return TypeOfAccount.Error;
         }
-        public List<AccountType> GetLoginType()     {
+        public List<AccountType> GetLoginType()
+        {
             return _AccountRepository.GetAccountType();
         }
+
+        
     }
 }
 
