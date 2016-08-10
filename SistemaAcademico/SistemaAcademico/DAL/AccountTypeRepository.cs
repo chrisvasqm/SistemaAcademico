@@ -8,8 +8,7 @@ namespace SistemaAcademico.DAL
         private AcademicEntities dataBase = new AcademicEntities();        
         public List<AccountType> GetAccountType()
         {
-           var result = dataBase.AccountTypes;
-           return result.ToList();
+           return dataBase.AccountTypes.ToList();
         } 
     }
 }

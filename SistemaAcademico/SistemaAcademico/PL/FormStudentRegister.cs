@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SistemaAcademico.BLL;
+using System;
 using System.Windows.Forms;
 
 namespace PL
 {
     public partial class FormStudentRegister : Form
     {
+        private RegistrationService _RegistrationService = new RegistrationService();
+
         public FormStudentRegister()
         {
             InitializeComponent();
@@ -27,6 +23,13 @@ namespace PL
         private void btnCrear_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormStudentRegister_Load(object sender, EventArgs e)
+        {
+            cmbGender.DataSource = _RegistrationService.GetGender();
+            cmbGender.DisplayMember = "Gender";
+            cmbGender.ValueMember = "Gender";
         }
     }
 }

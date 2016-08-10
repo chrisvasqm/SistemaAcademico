@@ -1,5 +1,4 @@
 ﻿using SistemaAcademico.BLL;
-using SistemaAcademico.DAL;
 using System;
 using System.Windows.Forms;
 
@@ -16,9 +15,7 @@ namespace PL
         private void label1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        
+        }        
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
@@ -34,9 +31,12 @@ namespace PL
 
         private void FormStudentPanel_Load(object sender, EventArgs e)
         {
-            cmbMat.DataSource = _StudentService.GetSubjects();
-            cmbMat.DisplayMember = "Subject";
-            cmbMat.ValueMember = "Subject";
+            dataGrid2.DataSource = _StudentService.GetContent();
+        }
+
+        private void btnBuscarMats_Click(object sender, EventArgs e)
+        {
+            dataGrid2.DataSource = _StudentService.GetContent();
         }
     }
 }

@@ -38,20 +38,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGrid2 = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmbMat = new System.Windows.Forms.ComboBox();
-            this.txtMat2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
+            this.btnBuscarMats = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid2)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -79,7 +74,7 @@
             // dataGrid
             // 
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid.Location = new System.Drawing.Point(26, 124);
+            this.dataGrid.Location = new System.Drawing.Point(30, 18);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.Size = new System.Drawing.Size(858, 345);
             this.dataGrid.TabIndex = 5;
@@ -89,23 +84,23 @@
             this.groupBox1.Controls.Add(this.txtEnrollment);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(311, 6);
+            this.groupBox1.Location = new System.Drawing.Point(332, 374);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(273, 100);
+            this.groupBox1.Size = new System.Drawing.Size(273, 83);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda";
             // 
             // txtEnrollment
             // 
-            this.txtEnrollment.Location = new System.Drawing.Point(18, 51);
+            this.txtEnrollment.Location = new System.Drawing.Point(18, 42);
             this.txtEnrollment.Name = "txtEnrollment";
             this.txtEnrollment.Size = new System.Drawing.Size(100, 20);
             this.txtEnrollment.TabIndex = 0;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(136, 40);
+            this.btnBuscar.Location = new System.Drawing.Point(134, 26);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(122, 40);
             this.btnBuscar.TabIndex = 1;
@@ -116,7 +111,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 35);
+            this.label1.Location = new System.Drawing.Point(18, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 0;
@@ -125,8 +120,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnBuscarMats);
             this.tabPage2.Controls.Add(this.dataGrid2);
-            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.btnAgregar);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -138,61 +134,14 @@
             // dataGrid2
             // 
             this.dataGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid2.Location = new System.Drawing.Point(26, 140);
+            this.dataGrid2.Location = new System.Drawing.Point(23, 41);
             this.dataGrid2.Name = "dataGrid2";
-            this.dataGrid2.Size = new System.Drawing.Size(849, 336);
+            this.dataGrid2.Size = new System.Drawing.Size(869, 336);
             this.dataGrid2.TabIndex = 1;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.cmbMat);
-            this.groupBox2.Controls.Add(this.txtMat2);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.btnAgregar);
-            this.groupBox2.Location = new System.Drawing.Point(208, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(474, 128);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Materias";
-            // 
-            // cmbMat
-            // 
-            this.cmbMat.FormattingEnabled = true;
-            this.cmbMat.Location = new System.Drawing.Point(21, 86);
-            this.cmbMat.Name = "cmbMat";
-            this.cmbMat.Size = new System.Drawing.Size(212, 21);
-            this.cmbMat.TabIndex = 4;
-            // 
-            // txtMat2
-            // 
-            this.txtMat2.Location = new System.Drawing.Point(21, 42);
-            this.txtMat2.Name = "txtMat2";
-            this.txtMat2.Size = new System.Drawing.Size(212, 20);
-            this.txtMat2.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Materia:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Matricula:";
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(263, 41);
+            this.btnAgregar.Location = new System.Drawing.Point(508, 390);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(182, 66);
             this.btnAgregar.TabIndex = 0;
@@ -209,6 +158,16 @@
             this.btnAtras.TabIndex = 12;
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
+            // btnBuscarMats
+            // 
+            this.btnBuscarMats.Location = new System.Drawing.Point(224, 390);
+            this.btnBuscarMats.Name = "btnBuscarMats";
+            this.btnBuscarMats.Size = new System.Drawing.Size(182, 66);
+            this.btnBuscarMats.TabIndex = 1;
+            this.btnBuscarMats.Text = "REFRESCAR";
+            this.btnBuscarMats.UseVisualStyleBackColor = true;
+            this.btnBuscarMats.Click += new System.EventHandler(this.btnBuscarMats_Click);
             // 
             // FormStudentPanel
             // 
@@ -229,8 +188,6 @@
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid2)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -246,12 +203,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGrid2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cmbMat;
-        private System.Windows.Forms.TextBox txtMat2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.Button btnBuscarMats;
     }
 }
