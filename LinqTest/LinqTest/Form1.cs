@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace LinqTest
@@ -69,12 +68,7 @@ namespace LinqTest
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            
-
-
-
-
+        {            
             //int rowindex = dataGridView1.CurrentCell.RowIndex;
             //int id = Convert.ToInt32(dataGridView1.Rows[rowindex].Cells[0].Value);
 

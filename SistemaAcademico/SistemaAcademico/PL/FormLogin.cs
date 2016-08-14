@@ -1,13 +1,15 @@
 ﻿
 using System;
 using System.Windows.Forms;
+using SistemaAcademico;
 using SistemaAcademico.BLL;
 
 namespace PL
 {
     public partial class FormLogin : Form
     {
-        LoginServices _loginServices = new LoginServices();
+        private AcademicEntities dataBase = new AcademicEntities();
+        private LoginServices _loginServices = new LoginServices();
         public FormLogin()
         {
             InitializeComponent();            
@@ -24,14 +26,19 @@ namespace PL
         }
         private void Login()
         {
-            var loginResponse = _loginServices.ValidateAccountType(txtUsername.Text, txtPassword.Text, (int)cmbAccountType.SelectedValue);
+            var loginValues = new Login
+            {
+                Enrollment = txtUsername.Text,
+                Password = txtPassword.Text
+            };
+            var loginResponse = _loginServices.ValidateAccountType(loginValues, (int)cmbAccountType.SelectedValue);
 
             if (loginResponse == TypeOfAccount.Student)
                 ShowStudentForm();
             else if (loginResponse == TypeOfAccount.Teacher)
                 ShowTeacherForm();
             else if (loginResponse == TypeOfAccount.Error)
-                MessageBox.Show("Wrong username, password or account type");
+                MessageBox.Show("Matricula y/o contraña invalida. Por favor, intente de nuevo.");
         }
         private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

@@ -12,17 +12,18 @@ namespace SistemaAcademico
     using System;
     using System.Collections.Generic;
     
-    public partial class Qualification
+    public partial class StudentSeccion
     {
-        public int QualificationID { get; set; }
-        public Nullable<int> Test { get; set; }
-        public Nullable<int> Test2 { get; set; }
-        public Nullable<int> Test3 { get; set; }
-        public Nullable<int> Practice { get; set; }
-        public Nullable<int> Attendance { get; set; }
-        public Nullable<int> Record { get; set; }
-        public Nullable<int> PensumID { get; set; }
+        public int ID { get; set; }
+        public Nullable<int> SeccionID { get; set; }
+        public Nullable<int> StudentID { get; set; }
+        public byte[] FirstTest { get; set; }
+        public string SecondTest { get; set; }
+        public string ThirdTest { get; set; }
+        public string Attendance { get; set; }
+        public string Practice { get; set; }
     
-        public virtual Pensum Pensum { get; set; }
+        public virtual Student Student { get; set; }
+        public virtual Seccion Seccion { get; set; }
     }
 }

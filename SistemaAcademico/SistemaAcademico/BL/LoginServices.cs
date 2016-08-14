@@ -1,4 +1,4 @@
-﻿using SistemaAcademico.DAL;
+﻿using SistemaAcademico.DAL.LoginRepositories;
 using System.Collections.Generic;
 
 namespace SistemaAcademico.BLL
@@ -7,14 +7,14 @@ namespace SistemaAcademico.BLL
     {
         private LoginRepository _LoginRepository = new LoginRepository();
         private AccountTypeRepository _AccountRepository = new AccountTypeRepository();
-        private PensumRepository _PensumRepository = new PensumRepository();
-        public TypeOfAccount ValidateAccountType(string username, string password, int comboValue)
+        public TypeOfAccount ValidateAccountType(Login loginValues, int comboValue)
         {
-            var user = _LoginRepository.VerifyLogin(username, password);
+            var user = _LoginRepository.VerifyLogin(loginValues);
 
-            if (user.AccountTypeID == (int)TypeOfAccount.Student && user.AccountTypeID == comboValue)
+            if (user != null && user.AccountTypeID == (int)TypeOfAccount.Student && user.AccountTypeID == comboValue)
                 return TypeOfAccount.Student;
-            else if (user.AccountTypeID == (int)TypeOfAccount.Teacher && user.AccountTypeID == comboValue)
+
+            else if (user != null && user.AccountTypeID == (int)TypeOfAccount.Teacher && user.AccountTypeID == comboValue)
                 return TypeOfAccount.Teacher;
 
             return TypeOfAccount.Error;

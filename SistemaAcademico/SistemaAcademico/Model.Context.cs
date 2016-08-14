@@ -25,11 +25,13 @@ namespace SistemaAcademico
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Gender> Genders { get; set; }
-        public virtual DbSet<Login> Logins { get; set; }
-        public virtual DbSet<Pensum> Pensums { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<AccountType> AccountTypes { get; set; }
-        public virtual DbSet<Qualification> Qualifications { get; set; }
+        public virtual DbSet<Seccion> Seccions { get; set; }
+        public virtual DbSet<StudentSeccion> StudentSeccions { get; set; }
+        public virtual DbSet<Subject> Subjects { get; set; }
+        public virtual DbSet<Teacher> Teachers { get; set; }
+        public virtual DbSet<Gender> Genders { get; set; }
+        public virtual DbSet<Login> Logins { get; set; }
     }
 }

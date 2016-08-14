@@ -12,18 +12,22 @@ namespace SistemaAcademico
     using System;
     using System.Collections.Generic;
     
-    public partial class Gender
+    public partial class Subject
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Gender()
+        public Subject()
         {
-            this.Students = new HashSet<Student>();
+            this.Seccions = new HashSet<Seccion>();
         }
     
         public int ID { get; set; }
-        public string Genders { get; set; }
+        public string Code { get; set; }
+        public string Subjects { get; set; }
+        public Nullable<int> Credits { get; set; }
+        public string Prerequisite { get; set; }
+        public Nullable<bool> isAproved { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Student> Students { get; set; }
+        public virtual ICollection<Seccion> Seccions { get; set; }
     }
 }

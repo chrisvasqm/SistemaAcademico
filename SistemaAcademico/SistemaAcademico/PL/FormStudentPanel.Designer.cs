@@ -37,10 +37,10 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnBuscarMats = new System.Windows.Forms.Button();
             this.dataGrid2 = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
-            this.btnBuscarMats = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
@@ -116,7 +116,6 @@
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Matricula:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tabPage2
             // 
@@ -131,12 +130,22 @@
             this.tabPage2.Text = "Seleccion de Materias";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnBuscarMats
+            // 
+            this.btnBuscarMats.Location = new System.Drawing.Point(224, 390);
+            this.btnBuscarMats.Name = "btnBuscarMats";
+            this.btnBuscarMats.Size = new System.Drawing.Size(182, 66);
+            this.btnBuscarMats.TabIndex = 1;
+            this.btnBuscarMats.Text = "REFRESCAR";
+            this.btnBuscarMats.UseVisualStyleBackColor = true;
+            this.btnBuscarMats.Click += new System.EventHandler(this.btnBuscarMats_Click);
+            // 
             // dataGrid2
             // 
             this.dataGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid2.Location = new System.Drawing.Point(23, 41);
+            this.dataGrid2.Location = new System.Drawing.Point(23, 24);
             this.dataGrid2.Name = "dataGrid2";
-            this.dataGrid2.Size = new System.Drawing.Size(869, 336);
+            this.dataGrid2.Size = new System.Drawing.Size(869, 353);
             this.dataGrid2.TabIndex = 1;
             // 
             // btnAgregar
@@ -158,16 +167,6 @@
             this.btnAtras.TabIndex = 12;
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // btnBuscarMats
-            // 
-            this.btnBuscarMats.Location = new System.Drawing.Point(224, 390);
-            this.btnBuscarMats.Name = "btnBuscarMats";
-            this.btnBuscarMats.Size = new System.Drawing.Size(182, 66);
-            this.btnBuscarMats.TabIndex = 1;
-            this.btnBuscarMats.Text = "REFRESCAR";
-            this.btnBuscarMats.UseVisualStyleBackColor = true;
-            this.btnBuscarMats.Click += new System.EventHandler(this.btnBuscarMats_Click);
             // 
             // FormStudentPanel
             // 

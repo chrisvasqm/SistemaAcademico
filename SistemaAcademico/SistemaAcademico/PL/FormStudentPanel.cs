@@ -10,33 +10,26 @@ namespace PL
         public FormStudentPanel()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }        
+        }   
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormLogin newForm = new FormLogin();
-            newForm.Show();
+            var loginForm = new FormLogin();
+            loginForm.Show();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            dataGrid.DataSource = _StudentService.GetContent();
+            
         }
 
         private void FormStudentPanel_Load(object sender, EventArgs e)
         {
-            dataGrid2.DataSource = _StudentService.GetContent();
         }
 
         private void btnBuscarMats_Click(object sender, EventArgs e)
         {
-            dataGrid2.DataSource = _StudentService.GetContent();
         }
     }
 }

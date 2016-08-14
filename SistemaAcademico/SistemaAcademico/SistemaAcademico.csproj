@@ -60,14 +60,15 @@
     <Compile Include="AccountType.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="BLL\Enumerators.cs" />
-    <Compile Include="BLL\LoginServices.cs" />
-    <Compile Include="BLL\RegistrationService.cs" />
-    <Compile Include="BLL\StudentServices.cs" />
-    <Compile Include="DAL\AccountTypeRepository.cs" />
-    <Compile Include="DAL\PensumRepository.cs" />
-    <Compile Include="DAL\LoginRepository.cs" />
-    <Compile Include="DAL\GenderRepository.cs" />
+    <Compile Include="BL\Enumerators.cs" />
+    <Compile Include="BL\LoginServices.cs" />
+    <Compile Include="BL\RegistrationService.cs" />
+    <Compile Include="DAL\StudentRepository.cs" />
+    <Compile Include="BL\StudentServices.cs" />
+    <Compile Include="DAL\RegistrationRepositories\AccountRepository.cs" />
+    <Compile Include="DAL\LoginRepositories\AccountTypeRepository.cs" />
+    <Compile Include="DAL\LoginRepositories\LoginRepository.cs" />
+    <Compile Include="DAL\RegistrationRepositories\GenderRepository.cs" />
     <Compile Include="Gender.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -88,9 +89,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Pensum.cs">
-      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="PL\FormTeacherPanel.cs">
       <SubType>Form</SubType>
@@ -118,10 +116,19 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Qualification.cs">
+    <Compile Include="Seccion.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Student.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentSeccion.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Subject.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="PL\FormTeacherPanel.resx">
@@ -183,6 +190,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

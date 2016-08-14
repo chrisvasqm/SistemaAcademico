@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace SistemaAcademico.DAL
+namespace SistemaAcademico.DAL.LoginRepositories
 {
     public class AccountTypeRepository
     {

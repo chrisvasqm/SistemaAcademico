@@ -12,22 +12,22 @@ namespace SistemaAcademico
     using System;
     using System.Collections.Generic;
     
-    public partial class Pensum
+    public partial class Seccion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Pensum()
+        public Seccion()
         {
-            this.Qualifications = new HashSet<Qualification>();
+            this.StudentSeccions = new HashSet<StudentSeccion>();
         }
     
         public int ID { get; set; }
         public string Code { get; set; }
-        public string Subject { get; set; }
-        public string Prerequisite { get; set; }
-        public Nullable<int> Credits { get; set; }
-        public Nullable<bool> isApproved { get; set; }
+        public Nullable<int> SebjectID { get; set; }
+        public Nullable<int> TeacherID { get; set; }
     
+        public virtual Teacher Teacher { get; set; }
+        public virtual Subject Subject { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Qualification> Qualifications { get; set; }
+        public virtual ICollection<StudentSeccion> StudentSeccions { get; set; }
     }
 }
