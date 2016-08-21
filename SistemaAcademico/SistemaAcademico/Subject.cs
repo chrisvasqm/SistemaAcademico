@@ -19,6 +19,5 @@ namespace SistemaAcademico
         public string Materias { get; set; }
         public Nullable<int> Creditos { get; set; }
         public string Prerequisito { get; set; }
-        public Nullable<bool> isAproved { get; set; }
     }
 }

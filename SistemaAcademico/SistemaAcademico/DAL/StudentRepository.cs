@@ -5,7 +5,7 @@ namespace SistemaAcademico.DAL
 {
     public class StudentRepository
     {
-        AcademicEntities dataBase = new AcademicEntities();
-        public int GetStudentIdByEnrollment(string StudentEnrollment)   {   return dataBase.Students.FirstOrDefault(x => x.Enrollment == StudentEnrollment).ID;   }        
+        AcademicEntities dbContext = new AcademicEntities();
+        public int GetStudentIdByEnrollment(string StudentEnrollment)   {   return dbContext.Students.FirstOrDefault(x => x.Enrollment == StudentEnrollment).ID;   }        
     }
 }

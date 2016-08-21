@@ -23,5 +23,6 @@ namespace SistemaAcademico
         public Nullable<int> Asistencia { get; set; }
         public Nullable<int> Practica { get; set; }
         public Nullable<int> Nota { get; set; }
+        public Nullable<bool> isApproved { get; set; }
     }
 }

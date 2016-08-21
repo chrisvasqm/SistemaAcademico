@@ -11,8 +11,8 @@
         <AssociationConnector Association="dbAcademicModel.GenderStudent" />
         <EntityTypeShape EntityType="dbAcademicModel.Login" Width="1.5" PointX="0.625" PointY="3.75" />
         <AssociationConnector Association="dbAcademicModel.AccountTypeLogin" />
-        <EntityTypeShape EntityType="dbAcademicModel.StudentRecord" Width="1.5" PointX="8.125" PointY="0.5" />
-        <EntityTypeShape EntityType="dbAcademicModel.Subject" Width="1.5" PointX="5.875" PointY="0.5" />
+        <EntityTypeShape EntityType="dbAcademicModel.StudentRecord" Width="1.5" PointX="8" PointY="0.5" />
+        <EntityTypeShape EntityType="dbAcademicModel.Subject" Width="1.5" PointX="5.75" PointY="0.5" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

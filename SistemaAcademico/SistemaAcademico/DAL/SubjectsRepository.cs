@@ -6,7 +6,7 @@ namespace SistemaAcademico.DAL
 {
     class SubjectsRepository
     {
-        private AcademicEntities dataBase = new AcademicEntities();
-        public List<Subject> GetAllSubjects() {  return dataBase.Subjects.ToList();  }       
+        private AcademicEntities dbContext = new AcademicEntities();
+        public List<Subject> GetAllSubjects() {  return dbContext.Subjects.ToList();  }       
     }
 }

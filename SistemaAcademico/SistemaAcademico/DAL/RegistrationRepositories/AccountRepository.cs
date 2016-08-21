@@ -4,17 +4,17 @@ namespace SistemaAcademico.DAL.RegistrationRepository
 {
     class AccountRepository
     {
-        private AcademicEntities dataBase = new AcademicEntities();
+        private AcademicEntities dbContext = new AcademicEntities();
         public void CreateLoginAccount(Login loginValues)
         {            
-            dataBase.Logins.Add(loginValues);
-            dataBase.SaveChanges();
+            dbContext.Logins.Add(loginValues);
+            dbContext.SaveChanges();
         }
         public void CreateStudentInfo(Student studentValues)
         {
-            dataBase.Students.Add(studentValues);
-            dataBase.SaveChanges();
+            dbContext.Students.Add(studentValues);
+            dbContext.SaveChanges();
         }
-        public bool AccountExist (string loginEnrollment) {     return dataBase.Logins.Any(x => x.Enrollment == loginEnrollment);    }
+        public bool AccountExist (string loginEnrollment) {     return dbContext.Logins.Any(x => x.Enrollment == loginEnrollment);    }
     }
 }

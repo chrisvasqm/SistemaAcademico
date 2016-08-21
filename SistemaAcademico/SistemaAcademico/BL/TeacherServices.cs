@@ -5,14 +5,14 @@ namespace SistemaAcademico.BL
 {
     class TeacherServices
     {
-        private RecordsRepository _recordsRepository = new RecordsRepository();
+        private RecordsRepository _recordsRepo = new RecordsRepository();
         public List<StudentRecord> GetAllStudentsRecords()
         {
-            return _recordsRepository.GetAllStudentRecords();
+            return _recordsRepo.GetAllStudentRecords();
         }
         public List<StudentRecord> GetRecordsBySubject(string cmbValue)
         {
-            return _recordsRepository.GetRecordBySubject(cmbValue);
+            return _recordsRepo.GetRecordBySubject(cmbValue);
         }
         public bool isNotOverOrUnderLimit(StudentRecord evaluationValues)
         {
@@ -28,12 +28,12 @@ namespace SistemaAcademico.BL
 
         public void EvaluateStudentsByEnrollment(StudentRecord evaluationValues)
         {            
-            _recordsRepository.EvaluateStudentByEnrollment(evaluationValues);
+            _recordsRepo.EvaluateStudentByEnrollment(evaluationValues);
         }
 
         public int GetRecordId (string matricula, string materia)
         {
-            return _recordsRepository.GetIdByEnrollmentAndSubject(matricula, materia);
+            return _recordsRepo.GetIdByEnrollmentAndSubject(matricula, materia);
         }
     }
 }

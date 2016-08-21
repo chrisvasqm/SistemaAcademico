@@ -11,36 +11,48 @@ namespace PL
         private AcademicEntities dbContext = new AcademicEntities();
         private TeacherServices _teacherService = new TeacherServices();
         private SubjectsRepository _subjectsRepository = new SubjectsRepository();
+
         public FormTeacherPanel()
         {
             InitializeComponent();
         }
         private void FormTeacherPanel_Load(object sender, EventArgs e)
         {
-            cmbMaterias.DataSource      = _subjectsRepository.GetAllSubjects();
-            cmbMaterias.DisplayMember   = "Materias";
-            cmbMaterias.ValueMember     = "ID";
-
-            dgv1.DataSource                 = _teacherService.GetAllStudentsRecords();
-            dgv1.Columns["ID"].Visible      = false;
-            dgv1.Columns["Materia"].Width   = 150;
+            FillComboBox();
+            RefreshDataGrid();
         }
+
+        private void FillComboBox()
+        {
+            cmbMaterias.DataSource = _subjectsRepository.GetAllSubjects();
+            cmbMaterias.DisplayMember = "Materias";
+            cmbMaterias.ValueMember = "ID";
+        }
+
+        private void RefreshDataGrid()
+        {
+            dgv1.DataSource = _teacherService.GetAllStudentsRecords();
+            dgv1.Columns["ID"].Visible = false;
+            dgv1.Columns["Materia"].Width = 150;
+        }
+
         private void btnGuardar(object sender, EventArgs e)
         {
             var cmbValue = cmbMaterias.Text;
 
             dgv1.DataSource = _teacherService.GetRecordsBySubject(cmbValue);
         }
+
         private void btnAtras_Click(object sender, EventArgs e)
         {
             Hide();
             var loginForm = new FormLogin();
             loginForm.Show();
         }
+
         private void btnEvaluar_Click(object sender, EventArgs e)
         {
-            var IdValue = _teacherService.GetRecordId(txtMatricula.Text, cmbMaterias.Text);
-            //TODO: HACER UN METODO QUE MEDIANTE LA MATRICULA Y LA MATERIA TRAIGA EL ID Y ESE ID SE LO ASIGNE AL OBJETO DE ABAJO
+            var IdValue = _teacherService.GetRecordId(txtMatricula.Text, cmbMaterias.Text);            
             var evaluationValues = new StudentRecord
             {
                 ID = IdValue,
@@ -54,35 +66,18 @@ namespace PL
             if (_teacherService.isNotOverOrUnderLimit(evaluationValues))
             {
                 _teacherService.EvaluateStudentsByEnrollment(evaluationValues);
+                RefreshDataGrid();
             }
             else
             {
                 MessageBox.Show(@"Los valores a ingresar deben ser mayores que cero y no superar los siguientes valores: 
+
 Parciales: 20
 Practica: 30
 Asistencia: 10");
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
         private void txtPrimerParcial_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))

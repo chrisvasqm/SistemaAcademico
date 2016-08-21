@@ -41,6 +41,7 @@
           <Property Name="Asistencia" Type="int" />
           <Property Name="Practica" Type="int" />
           <Property Name="Nota" Type="int" />
+          <Property Name="isApproved" Type="bit" />
         </EntityType>
         <EntityType Name="Students">
           <Key>
@@ -64,7 +65,6 @@
           <Property Name="Materias" Type="varchar" MaxLength="50" />
           <Property Name="Creditos" Type="int" />
           <Property Name="Prerequisito" Type="varchar" MaxLength="50" />
-          <Property Name="isAproved" Type="bit" />
         </EntityType>
         <EntityContainer Name="dbAcademicModelStoreContainer">
           <EntitySet Name="AccountType" EntityType="Self.AccountType" Schema="dbo" store:Type="Tables" />
@@ -171,6 +171,7 @@
           <Property Name="Asistencia" Type="Int32" />
           <Property Name="Practica" Type="Int32" />
           <Property Name="Nota" Type="Int32" />
+          <Property Name="isApproved" Type="Boolean" />
         </EntityType>
         <EntityType Name="Subject">
           <Key>
@@ -181,7 +182,6 @@
           <Property Name="Materias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Creditos" Type="Int32" />
           <Property Name="Prerequisito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="isAproved" Type="Boolean" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -232,6 +232,7 @@
           <EntitySetMapping Name="StudentRecords">
             <EntityTypeMapping TypeName="dbAcademicModel.StudentRecord">
               <MappingFragment StoreEntitySet="StudentRecord">
+                <ScalarProperty Name="isApproved" ColumnName="isApproved" />
                 <ScalarProperty Name="Nota" ColumnName="Nota" />
                 <ScalarProperty Name="Practica" ColumnName="Practica" />
                 <ScalarProperty Name="Asistencia" ColumnName="Asistencia" />
@@ -247,7 +248,6 @@
           <EntitySetMapping Name="Subjects">
             <EntityTypeMapping TypeName="dbAcademicModel.Subject">
               <MappingFragment StoreEntitySet="Subjects">
-                <ScalarProperty Name="isAproved" ColumnName="isAproved" />
                 <ScalarProperty Name="Prerequisito" ColumnName="Prerequisito" />
                 <ScalarProperty Name="Creditos" ColumnName="Creditos" />
                 <ScalarProperty Name="Materias" ColumnName="Materias" />

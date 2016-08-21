@@ -5,28 +5,28 @@ namespace SistemaAcademico.BL
 {
     class StudentServices
     {
-        private SubjectsRepository _subjectRepository = new SubjectsRepository();
-        private RecordsRepository _studentSeccionRepository = new RecordsRepository();
+        private SubjectsRepository _subjectRepo = new SubjectsRepository();
+        private RecordsRepository _studentRecordsRepo = new RecordsRepository();
         
         public List<Subject> GetAllSubject()
         {
-            return _subjectRepository.GetAllSubjects();
+            return _subjectRepo.GetAllSubjects();
         }
         public List<StudentRecord> GetRecordsByMatricula(string studentMatricula)
         {
-            return _studentSeccionRepository.GetRecordByEnrollment(studentMatricula);
+            return _studentRecordsRepo.GetRecordByEnrollment(studentMatricula);
         }    
 
         public bool ValidateDuplicate(StudentRecord selectionValues)
         {
-            if (_studentSeccionRepository.isDuplicated(selectionValues))
+            if (_studentRecordsRepo.isDuplicated(selectionValues))
                 return true;
             else
                 return false;
         }
         public void SetStudentSubject(StudentRecord selectionValues)
         {
-            _studentSeccionRepository.SetStudentSubjects(selectionValues);
+            _studentRecordsRepo.SetStudentSubjects(selectionValues);
         }
     }
 }

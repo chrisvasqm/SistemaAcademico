@@ -4,7 +4,7 @@ namespace SistemaAcademico.DAL.LoginRepositories
 {
     public class LoginRepository
     {
-        private AcademicEntities dataBase = new AcademicEntities();
-        public Login VerifyLogin(Login loginValues) {    return dataBase.Logins.FirstOrDefault(x => x.Enrollment == loginValues.Enrollment && x.Password == loginValues.Password);   }
+        private AcademicEntities dbContext = new AcademicEntities();
+        public Login VerifyLogin(Login loginValues) {    return dbContext.Logins.FirstOrDefault(x => x.Enrollment == loginValues.Enrollment && x.Password == loginValues.Password);   }
     }
 }

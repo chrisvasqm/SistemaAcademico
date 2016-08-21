@@ -5,11 +5,11 @@ namespace SistemaAcademico.BL
 {
     public class LoginServices
     {
-        private LoginRepository _LoginRepository = new LoginRepository();
-        private AccountTypeRepository _AccountRepository = new AccountTypeRepository();
+        private LoginRepository _loginRepo = new LoginRepository();
+        private AccountTypeRepository _accountRepo = new AccountTypeRepository();
         public TypeOfAccount ValidateAccountType(Login loginValues, int comboValue)
         {
-            var user = _LoginRepository.VerifyLogin(loginValues);
+            var user = _loginRepo.VerifyLogin(loginValues);
 
             if (user != null && user.AccountTypeID == (int)TypeOfAccount.Student && user.AccountTypeID == comboValue)
                 return TypeOfAccount.Student;
@@ -19,7 +19,7 @@ namespace SistemaAcademico.BL
 
             return TypeOfAccount.Error;
         }
-        public List<AccountType> GetLoginType() {   return _AccountRepository.GetAccountType();     }  
+        public List<AccountType> GetLoginType() {   return _accountRepo.GetAccountType();     }  
               
     }
 }
