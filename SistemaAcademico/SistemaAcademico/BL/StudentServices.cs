@@ -1,15 +1,21 @@
 ﻿using SistemaAcademico.DAL;
 using System.Collections.Generic;
 
-namespace SistemaAcademico.BLL
+namespace SistemaAcademico.BL
 {
     class StudentServices
     {
         private SubjectsRepository _subjectRepository = new SubjectsRepository();
-        private StudentSeccionRepository _studentSeccionRepository = new StudentSeccionRepository();
+        private RecordsRepository _studentSeccionRepository = new RecordsRepository();
         
-        public List<Subject> GetAllSubject() {   return _subjectRepository.GetAllSubjects();     }        
-        public List<StudentRecord> GetAllStudentsSubject(string studentMatricula) {    return _studentSeccionRepository.GetAllStudentSubjects(studentMatricula);     } 
+        public List<Subject> GetAllSubject()
+        {
+            return _subjectRepository.GetAllSubjects();
+        }
+        public List<StudentRecord> GetRecordsByMatricula(string studentMatricula)
+        {
+            return _studentSeccionRepository.GetRecordByEnrollment(studentMatricula);
+        }    
 
         public bool ValidateDuplicate(StudentRecord selectionValues)
         {

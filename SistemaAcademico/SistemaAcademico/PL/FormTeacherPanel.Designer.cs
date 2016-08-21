@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTeacherPanel));
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.dataGrid = new System.Windows.Forms.DataGridView();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
             this.txtMatricula = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbMateria = new System.Windows.Forms.ComboBox();
+            this.cmbMaterias = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEvaluar = new System.Windows.Forms.Button();
@@ -49,29 +49,29 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtPrimerParcial = new System.Windows.Forms.TextBox();
             this.btnAtras = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnBuscar
+            // btnFiltrar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(19, 77);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(261, 69);
-            this.btnBuscar.TabIndex = 3;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnGuardar);
+            this.btnFiltrar.Location = new System.Drawing.Point(16, 77);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(274, 69);
+            this.btnFiltrar.TabIndex = 3;
+            this.btnFiltrar.Text = "FILTRAR";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnGuardar);
             // 
-            // dataGrid
+            // dgv1
             // 
-            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid.Location = new System.Drawing.Point(12, 52);
-            this.dataGrid.Name = "dataGrid";
-            this.dataGrid.Size = new System.Drawing.Size(817, 395);
-            this.dataGrid.TabIndex = 25;
-            this.dataGrid.TabStop = false;
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Location = new System.Drawing.Point(12, 52);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.Size = new System.Drawing.Size(892, 395);
+            this.dgv1.TabIndex = 25;
+            this.dgv1.TabStop = false;
             // 
             // txtMatricula
             // 
@@ -83,11 +83,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cmbMateria);
-            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Controls.Add(this.cmbMaterias);
+            this.groupBox1.Controls.Add(this.btnFiltrar);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtMatricula);
-            this.groupBox1.Location = new System.Drawing.Point(12, 469);
+            this.groupBox1.Location = new System.Drawing.Point(44, 453);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(307, 168);
             this.groupBox1.TabIndex = 20;
@@ -98,24 +98,24 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(139, 31);
+            this.label2.Location = new System.Drawing.Point(119, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Materia:";
             // 
-            // cmbMateria
+            // cmbMaterias
             // 
-            this.cmbMateria.FormattingEnabled = true;
-            this.cmbMateria.Location = new System.Drawing.Point(139, 50);
-            this.cmbMateria.Name = "cmbMateria";
-            this.cmbMateria.Size = new System.Drawing.Size(141, 21);
-            this.cmbMateria.TabIndex = 2;
+            this.cmbMaterias.FormattingEnabled = true;
+            this.cmbMaterias.Location = new System.Drawing.Point(122, 50);
+            this.cmbMaterias.Name = "cmbMaterias";
+            this.cmbMaterias.Size = new System.Drawing.Size(168, 21);
+            this.cmbMaterias.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 32);
+            this.label1.Location = new System.Drawing.Point(13, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 3;
@@ -134,7 +134,7 @@
             this.groupBox2.Controls.Add(this.txtSegundoParcial);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtPrimerParcial);
-            this.groupBox2.Location = new System.Drawing.Point(337, 469);
+            this.groupBox2.Location = new System.Drawing.Point(389, 453);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(492, 168);
             this.groupBox2.TabIndex = 15;
@@ -166,6 +166,7 @@
             this.txtAsistencia.Name = "txtAsistencia";
             this.txtAsistencia.Size = new System.Drawing.Size(55, 20);
             this.txtAsistencia.TabIndex = 9;
+            this.txtAsistencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAsistencia_KeyPress);
             // 
             // label6
             // 
@@ -182,6 +183,7 @@
             this.txtPractica.Name = "txtPractica";
             this.txtPractica.Size = new System.Drawing.Size(55, 20);
             this.txtPractica.TabIndex = 8;
+            this.txtPractica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPractica_KeyPress);
             // 
             // label5
             // 
@@ -198,6 +200,7 @@
             this.txtTercerParcial.Name = "txtTercerParcial";
             this.txtTercerParcial.Size = new System.Drawing.Size(73, 20);
             this.txtTercerParcial.TabIndex = 7;
+            this.txtTercerParcial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTercerParcial_KeyPress);
             // 
             // label4
             // 
@@ -214,6 +217,7 @@
             this.txtSegundoParcial.Name = "txtSegundoParcial";
             this.txtSegundoParcial.Size = new System.Drawing.Size(85, 20);
             this.txtSegundoParcial.TabIndex = 5;
+            this.txtSegundoParcial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoParcial_KeyPress);
             // 
             // label3
             // 
@@ -230,6 +234,7 @@
             this.txtPrimerParcial.Name = "txtPrimerParcial";
             this.txtPrimerParcial.Size = new System.Drawing.Size(71, 20);
             this.txtPrimerParcial.TabIndex = 4;
+            this.txtPrimerParcial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerParcial_KeyPress);
             // 
             // btnAtras
             // 
@@ -246,17 +251,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 647);
+            this.ClientSize = new System.Drawing.Size(918, 637);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGrid);
+            this.Controls.Add(this.dgv1);
             this.MinimizeBox = false;
             this.Name = "FormTeacherPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Evaluacion";
             this.Load += new System.EventHandler(this.FormTeacherPanel_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -267,12 +272,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dataGrid;
+        private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbMateria;
+        private System.Windows.Forms.ComboBox cmbMaterias;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;

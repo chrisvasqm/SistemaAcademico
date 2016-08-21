@@ -1,7 +1,7 @@
 ﻿using SistemaAcademico.DAL.RegistrationRepository;
 using System.Collections.Generic;
 
-namespace SistemaAcademico.BLL
+namespace SistemaAcademico.BL
 {
     class RegistrationService
     {

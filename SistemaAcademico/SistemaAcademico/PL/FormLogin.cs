@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 using SistemaAcademico;
-using SistemaAcademico.BLL;
+using SistemaAcademico.BL;
 
 namespace PL
 {

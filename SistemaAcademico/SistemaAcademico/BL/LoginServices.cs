@@ -1,7 +1,7 @@
 ﻿using SistemaAcademico.DAL.LoginRepositories;
 using System.Collections.Generic;
 
-namespace SistemaAcademico.BLL
+namespace SistemaAcademico.BL
 {
     public class LoginServices
     {

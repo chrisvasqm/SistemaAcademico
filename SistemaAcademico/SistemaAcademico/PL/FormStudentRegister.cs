@@ -1,4 +1,4 @@
-﻿using SistemaAcademico.BLL;
+﻿using SistemaAcademico.BL;
 using SistemaAcademico;
 using System;
 using System.Windows.Forms;
@@ -34,14 +34,12 @@ namespace PL
 
         private void CreateNewAccount()
         {
-            var loginValues = new Login
-            {
+            var loginValues = new Login  {
                 Enrollment      = txtEnrollment.Text,
                 Password        = txtPassword.Text,
                 AccountTypeID   = 1
             };
-            var studentValues = new Student
-            {
+            var studentValues = new Student  {
                 Enrollment      = txtEnrollment.Text,
                 Name            = txtName.Text,
                 Lastname        = txtLastname.Text,
@@ -57,7 +55,7 @@ namespace PL
                 _RegistrationService.CreateStudentProfile(studentValues);
             }
             else
-                MessageBox.Show("Esta matricula ya esta registrada. Por favor, intente de nuevo.");            
+                MessageBox.Show("Esta matricula ya esta registrada. Por favor, intente una diferente.");            
         }
     }
 }

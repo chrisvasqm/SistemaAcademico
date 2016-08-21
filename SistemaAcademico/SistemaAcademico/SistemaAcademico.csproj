@@ -63,13 +63,14 @@
     <Compile Include="BL\Enumerators.cs" />
     <Compile Include="BL\LoginServices.cs" />
     <Compile Include="BL\RegistrationService.cs" />
+    <Compile Include="BL\TeacherServices.cs" />
     <Compile Include="DAL\StudentRepository.cs" />
     <Compile Include="BL\StudentServices.cs" />
     <Compile Include="DAL\RegistrationRepositories\AccountRepository.cs" />
     <Compile Include="DAL\LoginRepositories\AccountTypeRepository.cs" />
     <Compile Include="DAL\LoginRepositories\LoginRepository.cs" />
     <Compile Include="DAL\RegistrationRepositories\GenderRepository.cs" />
-    <Compile Include="DAL\StudentSeccionRepository.cs" />
+    <Compile Include="DAL\RecordsRepository.cs" />
     <Compile Include="DAL\SubjectsRepository.cs" />
     <Compile Include="Gender.cs">
       <DependentUpon>Model.tt</DependentUpon>

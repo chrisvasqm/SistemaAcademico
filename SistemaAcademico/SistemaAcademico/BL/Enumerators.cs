@@ -1,5 +1,5 @@
 ﻿
-namespace SistemaAcademico.BLL
+namespace SistemaAcademico.BL
 {
     public enum TypeOfAccount
     {
