@@ -31,32 +31,35 @@ namespace PL
                 Enrollment = txtUsername.Text,
                 Password = txtPassword.Text
             };
+
             var loginResponse = _loginServices.ValidateAccountType(loginValues, (int)cmbAccountType.SelectedValue);
 
             if (loginResponse == TypeOfAccount.Student)
                 ShowStudentForm();
+
             else if (loginResponse == TypeOfAccount.Teacher)
                 ShowTeacherForm();
+
             else if (loginResponse == TypeOfAccount.Error)
-                MessageBox.Show("Matricula y/o contraña invalida. Por favor, intente de nuevo.");
-        }
-        private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            var StudentRegForm = new FormStudentRegister();
-            StudentRegForm.Show();
-        }
+                MessageBox.Show("Matricula y/o contraseña invalida. Por favor, intente de nuevo.");
+        }        
         private void ShowStudentForm()
         {
-            this.Hide();
-            var StudentForm = new FormStudentPanel();
+            Hide();
+            var StudentForm = new FormStudentPanel(txtUsername.Text);
             StudentForm.Show();
         }       
         private void ShowTeacherForm()
         {
-            this.Hide();
+            Hide();
             var TeacherForm = new FormTeacherPanel();
             TeacherForm.Show();
-        }        
+        }
+        private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Hide();
+            var StudentRegForm = new FormStudentRegister();
+            StudentRegForm.Show();
+        }
     }
 }

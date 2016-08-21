@@ -56,7 +56,7 @@
             this.btnAtras.Location = new System.Drawing.Point(2, 3);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(41, 38);
-            this.btnAtras.TabIndex = 12;
+            this.btnAtras.TabIndex = 10;
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
@@ -83,21 +83,21 @@
             this.txtPassword.Location = new System.Drawing.Point(72, 85);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(179, 20);
-            this.txtPassword.TabIndex = 17;
+            this.txtPassword.TabIndex = 2;
             // 
             // txtEnrollment
             // 
             this.txtEnrollment.Location = new System.Drawing.Point(72, 46);
             this.txtEnrollment.Name = "txtEnrollment";
             this.txtEnrollment.Size = new System.Drawing.Size(179, 20);
-            this.txtEnrollment.TabIndex = 18;
+            this.txtEnrollment.TabIndex = 1;
             // 
             // btnCrear
             // 
             this.btnCrear.Location = new System.Drawing.Point(70, 350);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(179, 69);
-            this.btnCrear.TabIndex = 19;
+            this.btnCrear.TabIndex = 9;
             this.btnCrear.Text = "CREAR CUENTA";
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
@@ -107,7 +107,7 @@
             this.txtName.Location = new System.Drawing.Point(71, 127);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(179, 20);
-            this.txtName.TabIndex = 21;
+            this.txtName.TabIndex = 3;
             // 
             // label4
             // 
@@ -123,7 +123,7 @@
             this.txtLastname.Location = new System.Drawing.Point(71, 166);
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(179, 20);
-            this.txtLastname.TabIndex = 23;
+            this.txtLastname.TabIndex = 4;
             // 
             // label5
             // 
@@ -139,7 +139,7 @@
             this.txtAge.Location = new System.Drawing.Point(71, 205);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(179, 20);
-            this.txtAge.TabIndex = 25;
+            this.txtAge.TabIndex = 5;
             // 
             // label6
             // 
@@ -155,7 +155,7 @@
             this.txtAddress.Location = new System.Drawing.Point(71, 244);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(179, 20);
-            this.txtAddress.TabIndex = 27;
+            this.txtAddress.TabIndex = 6;
             // 
             // label7
             // 
@@ -171,7 +171,7 @@
             this.txtCardId.Location = new System.Drawing.Point(70, 283);
             this.txtCardId.Name = "txtCardId";
             this.txtCardId.Size = new System.Drawing.Size(179, 20);
-            this.txtCardId.TabIndex = 29;
+            this.txtCardId.TabIndex = 7;
             // 
             // label8
             // 
@@ -197,7 +197,7 @@
             this.cmbGender.Location = new System.Drawing.Point(71, 323);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(179, 21);
-            this.cmbGender.TabIndex = 31;
+            this.cmbGender.TabIndex = 8;
             // 
             // FormStudentRegister
             // 

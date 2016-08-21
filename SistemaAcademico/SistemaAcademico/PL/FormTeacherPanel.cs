@@ -17,7 +17,7 @@ namespace PL
         }
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             var loginForm = new FormLogin();
             loginForm.Show();
         }

@@ -72,7 +72,7 @@
             this.txtUsername.Location = new System.Drawing.Point(60, 44);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(168, 20);
-            this.txtUsername.TabIndex = 3;
+            this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
@@ -80,14 +80,14 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(168, 20);
-            this.txtPassword.TabIndex = 4;
+            this.txtPassword.TabIndex = 2;
             // 
             // btnAcceder
             // 
             this.btnAcceder.Location = new System.Drawing.Point(60, 202);
             this.btnAcceder.Name = "btnAcceder";
             this.btnAcceder.Size = new System.Drawing.Size(168, 67);
-            this.btnAcceder.TabIndex = 5;
+            this.btnAcceder.TabIndex = 4;
             this.btnAcceder.Text = "ACCEDER";
             this.btnAcceder.UseVisualStyleBackColor = true;
             this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
@@ -98,7 +98,7 @@
             this.linkRegistrate.Location = new System.Drawing.Point(117, 304);
             this.linkRegistrate.Name = "linkRegistrate";
             this.linkRegistrate.Size = new System.Drawing.Size(58, 13);
-            this.linkRegistrate.TabIndex = 6;
+            this.linkRegistrate.TabIndex = 5;
             this.linkRegistrate.TabStop = true;
             this.linkRegistrate.Text = "Registrate!";
             this.linkRegistrate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
@@ -109,7 +109,7 @@
             this.cmbAccountType.Location = new System.Drawing.Point(60, 154);
             this.cmbAccountType.Name = "cmbAccountType";
             this.cmbAccountType.Size = new System.Drawing.Size(168, 21);
-            this.cmbAccountType.TabIndex = 7;
+            this.cmbAccountType.TabIndex = 3;
             // 
             // label4
             // 

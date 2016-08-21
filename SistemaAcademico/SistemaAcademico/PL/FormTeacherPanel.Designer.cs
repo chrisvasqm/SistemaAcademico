@@ -59,7 +59,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(19, 77);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(261, 69);
-            this.btnBuscar.TabIndex = 0;
+            this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnGuardar);
@@ -70,14 +70,15 @@
             this.dataGrid.Location = new System.Drawing.Point(12, 52);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.Size = new System.Drawing.Size(817, 395);
-            this.dataGrid.TabIndex = 1;
+            this.dataGrid.TabIndex = 25;
+            this.dataGrid.TabStop = false;
             // 
             // txtMatricula
             // 
             this.txtMatricula.Location = new System.Drawing.Point(16, 51);
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.Size = new System.Drawing.Size(100, 20);
-            this.txtMatricula.TabIndex = 2;
+            this.txtMatricula.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -89,7 +90,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 469);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(307, 168);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Tag = "";
             this.groupBox1.Text = "Busqueda";
@@ -109,7 +110,7 @@
             this.cmbMateria.Location = new System.Drawing.Point(139, 50);
             this.cmbMateria.Name = "cmbMateria";
             this.cmbMateria.Size = new System.Drawing.Size(141, 21);
-            this.cmbMateria.TabIndex = 4;
+            this.cmbMateria.TabIndex = 2;
             // 
             // label1
             // 
@@ -136,7 +137,7 @@
             this.groupBox2.Location = new System.Drawing.Point(337, 469);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(492, 168);
-            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Evaluacion";
             // 
@@ -145,7 +146,7 @@
             this.btnEvaluar.Location = new System.Drawing.Point(15, 77);
             this.btnEvaluar.Name = "btnEvaluar";
             this.btnEvaluar.Size = new System.Drawing.Size(457, 69);
-            this.btnEvaluar.TabIndex = 14;
+            this.btnEvaluar.TabIndex = 10;
             this.btnEvaluar.Text = "EVALUAR";
             this.btnEvaluar.UseVisualStyleBackColor = true;
             this.btnEvaluar.Click += new System.EventHandler(this.btnEvaluar_Click);
@@ -164,7 +165,7 @@
             this.txtAsistencia.Location = new System.Drawing.Point(417, 51);
             this.txtAsistencia.Name = "txtAsistencia";
             this.txtAsistencia.Size = new System.Drawing.Size(55, 20);
-            this.txtAsistencia.TabIndex = 12;
+            this.txtAsistencia.TabIndex = 9;
             // 
             // label6
             // 
@@ -180,7 +181,7 @@
             this.txtPractica.Location = new System.Drawing.Point(338, 51);
             this.txtPractica.Name = "txtPractica";
             this.txtPractica.Size = new System.Drawing.Size(55, 20);
-            this.txtPractica.TabIndex = 10;
+            this.txtPractica.TabIndex = 8;
             // 
             // label5
             // 
@@ -196,7 +197,7 @@
             this.txtTercerParcial.Location = new System.Drawing.Point(236, 51);
             this.txtTercerParcial.Name = "txtTercerParcial";
             this.txtTercerParcial.Size = new System.Drawing.Size(73, 20);
-            this.txtTercerParcial.TabIndex = 8;
+            this.txtTercerParcial.TabIndex = 7;
             // 
             // label4
             // 
@@ -212,7 +213,7 @@
             this.txtSegundoParcial.Location = new System.Drawing.Point(119, 51);
             this.txtSegundoParcial.Name = "txtSegundoParcial";
             this.txtSegundoParcial.Size = new System.Drawing.Size(85, 20);
-            this.txtSegundoParcial.TabIndex = 6;
+            this.txtSegundoParcial.TabIndex = 5;
             // 
             // label3
             // 
@@ -237,7 +238,7 @@
             this.btnAtras.Location = new System.Drawing.Point(12, 5);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(41, 38);
-            this.btnAtras.TabIndex = 12;
+            this.btnAtras.TabIndex = 11;
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 

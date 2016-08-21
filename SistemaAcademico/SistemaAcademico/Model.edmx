@@ -28,14 +28,19 @@
           <Property Name="Password" Type="varchar" MaxLength="50" />
           <Property Name="AccountTypeID" Type="int" />
         </EntityType>
-        <EntityType Name="Seccion">
+        <EntityType Name="StudentRecord">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Code" Type="varchar" MaxLength="50" />
-          <Property Name="SebjectID" Type="int" />
-          <Property Name="TeacherID" Type="int" />
+          <Property Name="Student" Type="varchar" MaxLength="50" />
+          <Property Name="Materia" Type="varchar" MaxLength="50" />
+          <Property Name="P1" Type="int" />
+          <Property Name="P2" Type="int" />
+          <Property Name="P3" Type="int" />
+          <Property Name="Asistencia" Type="int" />
+          <Property Name="Practica" Type="int" />
+          <Property Name="Nota" Type="int" />
         </EntityType>
         <EntityType Name="Students">
           <Key>
@@ -50,47 +55,24 @@
           <Property Name="IdentityCardNum" Type="varchar" MaxLength="50" />
           <Property Name="GenderID" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="StudentSeccion">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="SeccionID" Type="int" />
-          <Property Name="StudentID" Type="int" />
-          <Property Name="FirstTest" Type="varbinary" MaxLength="50" />
-          <Property Name="SecondTest" Type="varchar" MaxLength="50" />
-          <Property Name="ThirdTest" Type="varchar" MaxLength="50" />
-          <Property Name="Attendance" Type="varchar" MaxLength="50" />
-          <Property Name="Practice" Type="varchar" MaxLength="50" />
-        </EntityType>
         <EntityType Name="Subjects">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Code" Type="varchar" MaxLength="50" />
-          <Property Name="Subjects" Type="varchar" MaxLength="50" />
-          <Property Name="Credits" Type="int" />
-          <Property Name="Prerequisite" Type="varchar" MaxLength="50" />
+          <Property Name="Codigo" Type="varchar" MaxLength="50" />
+          <Property Name="Materias" Type="varchar" MaxLength="50" />
+          <Property Name="Creditos" Type="int" />
+          <Property Name="Prerequisito" Type="varchar" MaxLength="50" />
           <Property Name="isAproved" Type="bit" />
-        </EntityType>
-        <EntityType Name="Teachers">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="Enrollment" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="dbAcademicModelStoreContainer">
           <EntitySet Name="AccountType" EntityType="Self.AccountType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Seccion" EntityType="Self.Seccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentRecord" EntityType="Self.StudentRecord" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="StudentSeccion" EntityType="Self.StudentSeccion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Teachers" EntityType="Self.Teachers" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -108,32 +90,11 @@
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="IdentityCardNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="GenderID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="StudentSeccions" Relationship="dbAcademicModel.StudentStudentSeccion" FromRole="Student" ToRole="StudentSeccion" />
           <NavigationProperty Name="Gender" Relationship="dbAcademicModel.GenderStudent" FromRole="Student" ToRole="Gender" />
         </EntityType>
         <EntityContainer Name="AcademicEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Students" EntityType="Self.Student" />
           <EntitySet Name="AccountTypes" EntityType="dbAcademicModel.AccountType" />
-          <EntitySet Name="Seccions" EntityType="dbAcademicModel.Seccion" />
-          <EntitySet Name="StudentSeccions" EntityType="dbAcademicModel.StudentSeccion" />
-          <EntitySet Name="Subjects" EntityType="dbAcademicModel.Subject" />
-          <EntitySet Name="Teachers" EntityType="dbAcademicModel.Teacher" />
-          <AssociationSet Name="TeacherSeccion" Association="dbAcademicModel.TeacherSeccion">
-            <End Role="Teacher" EntitySet="Teachers" />
-            <End Role="Seccion" EntitySet="Seccions" />
-          </AssociationSet>
-          <AssociationSet Name="SubjectSeccion" Association="dbAcademicModel.SubjectSeccion">
-            <End Role="Subject" EntitySet="Subjects" />
-            <End Role="Seccion" EntitySet="Seccions" />
-          </AssociationSet>
-          <AssociationSet Name="StudentStudentSeccion" Association="dbAcademicModel.StudentStudentSeccion">
-            <End Role="Student" EntitySet="Students" />
-            <End Role="StudentSeccion" EntitySet="StudentSeccions" />
-          </AssociationSet>
-          <AssociationSet Name="SeccionStudentSeccion" Association="dbAcademicModel.SeccionStudentSeccion">
-            <End Role="Seccion" EntitySet="Seccions" />
-            <End Role="StudentSeccion" EntitySet="StudentSeccions" />
-          </AssociationSet>
           <EntitySet Name="Genders" EntityType="dbAcademicModel.Gender" />
           <AssociationSet Name="GenderStudent" Association="dbAcademicModel.GenderStudent">
             <End Role="Gender" EntitySet="Genders" />
@@ -144,6 +105,8 @@
             <End Role="AccountType" EntitySet="AccountTypes" />
             <End Role="Login" EntitySet="Logins" />
           </AssociationSet>
+          <EntitySet Name="StudentRecords" EntityType="dbAcademicModel.StudentRecord" />
+          <EntitySet Name="Subjects" EntityType="dbAcademicModel.Subject" />
           </EntityContainer>
         <EntityType Name="AccountType">
           <Key>
@@ -153,102 +116,6 @@
           <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Logins" Relationship="dbAcademicModel.AccountTypeLogin" FromRole="AccountType" ToRole="Login" />
         </EntityType>
-        <EntityType Name="Seccion">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SebjectID" Type="Int32" />
-          <Property Name="TeacherID" Type="Int32" />
-          <NavigationProperty Name="Teacher" Relationship="dbAcademicModel.TeacherSeccion" FromRole="Seccion" ToRole="Teacher" />
-          <NavigationProperty Name="Subject" Relationship="dbAcademicModel.SubjectSeccion" FromRole="Seccion" ToRole="Subject" />
-          <NavigationProperty Name="StudentSeccions" Relationship="dbAcademicModel.SeccionStudentSeccion" FromRole="Seccion" ToRole="StudentSeccion" />
-        </EntityType>
-        <EntityType Name="StudentSeccion">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SeccionID" Type="Int32" />
-          <Property Name="StudentID" Type="Int32" />
-          <Property Name="FirstTest" Type="Binary" MaxLength="50" FixedLength="false" />
-          <Property Name="SecondTest" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ThirdTest" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Attendance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Practice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Student" Relationship="dbAcademicModel.StudentStudentSeccion" FromRole="StudentSeccion" ToRole="Student" />
-          <NavigationProperty Name="Seccion" Relationship="dbAcademicModel.SeccionStudentSeccion" FromRole="StudentSeccion" ToRole="Seccion" />
-        </EntityType>
-        <EntityType Name="Subject">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Subjects" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Credits" Type="Int32" />
-          <Property Name="Prerequisite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="isAproved" Type="Boolean" />
-          <NavigationProperty Name="Seccions" Relationship="dbAcademicModel.SubjectSeccion" FromRole="Subject" ToRole="Seccion" />
-        </EntityType>
-        <EntityType Name="Teacher">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Seccions" Relationship="dbAcademicModel.TeacherSeccion" FromRole="Teacher" ToRole="Seccion" />
-          <Property Name="Enrollment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <Association Name="TeacherSeccion">
-          <End Type="dbAcademicModel.Teacher" Role="Teacher" Multiplicity="0..1" />
-          <End Type="dbAcademicModel.Seccion" Role="Seccion" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Teacher">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Seccion">
-              <PropertyRef Name="TeacherID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="SubjectSeccion">
-          <End Type="dbAcademicModel.Subject" Role="Subject" Multiplicity="0..1" />
-          <End Type="dbAcademicModel.Seccion" Role="Seccion" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Subject">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Seccion">
-              <PropertyRef Name="SebjectID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="StudentStudentSeccion">
-          <End Type="dbAcademicModel.Student" Role="Student" Multiplicity="0..1" />
-          <End Type="dbAcademicModel.StudentSeccion" Role="StudentSeccion" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Student">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="StudentSeccion">
-              <PropertyRef Name="StudentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="SeccionStudentSeccion">
-          <End Type="dbAcademicModel.Seccion" Role="Seccion" Multiplicity="0..1" />
-          <End Type="dbAcademicModel.StudentSeccion" Role="StudentSeccion" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Seccion">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="StudentSeccion">
-              <PropertyRef Name="SeccionID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Gender">
           <Key>
             <PropertyRef Name="ID" />
@@ -291,6 +158,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="StudentRecord">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Student" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Materia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="P1" Type="Int32" />
+          <Property Name="P2" Type="Int32" />
+          <Property Name="P3" Type="Int32" />
+          <Property Name="Asistencia" Type="Int32" />
+          <Property Name="Practica" Type="Int32" />
+          <Property Name="Nota" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Materias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Creditos" Type="Int32" />
+          <Property Name="Prerequisito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isAproved" Type="Boolean" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -319,51 +211,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Seccions">
-            <EntityTypeMapping TypeName="dbAcademicModel.Seccion">
-              <MappingFragment StoreEntitySet="Seccion">
-                <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
-                <ScalarProperty Name="SebjectID" ColumnName="SebjectID" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="StudentSeccions">
-            <EntityTypeMapping TypeName="dbAcademicModel.StudentSeccion">
-              <MappingFragment StoreEntitySet="StudentSeccion">
-                <ScalarProperty Name="Practice" ColumnName="Practice" />
-                <ScalarProperty Name="Attendance" ColumnName="Attendance" />
-                <ScalarProperty Name="ThirdTest" ColumnName="ThirdTest" />
-                <ScalarProperty Name="SecondTest" ColumnName="SecondTest" />
-                <ScalarProperty Name="FirstTest" ColumnName="FirstTest" />
-                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
-                <ScalarProperty Name="SeccionID" ColumnName="SeccionID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Subjects">
-            <EntityTypeMapping TypeName="dbAcademicModel.Subject">
-              <MappingFragment StoreEntitySet="Subjects">
-                <ScalarProperty Name="isAproved" ColumnName="isAproved" />
-                <ScalarProperty Name="Prerequisite" ColumnName="Prerequisite" />
-                <ScalarProperty Name="Credits" ColumnName="Credits" />
-                <ScalarProperty Name="Subjects" ColumnName="Subjects" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Teachers">
-            <EntityTypeMapping TypeName="dbAcademicModel.Teacher">
-              <MappingFragment StoreEntitySet="Teachers">
-                <ScalarProperty Name="Enrollment" ColumnName="Enrollment" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Genders">
             <EntityTypeMapping TypeName="dbAcademicModel.Gender">
               <MappingFragment StoreEntitySet="Gender">
@@ -378,6 +225,33 @@
                 <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Enrollment" ColumnName="Enrollment" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentRecords">
+            <EntityTypeMapping TypeName="dbAcademicModel.StudentRecord">
+              <MappingFragment StoreEntitySet="StudentRecord">
+                <ScalarProperty Name="Nota" ColumnName="Nota" />
+                <ScalarProperty Name="Practica" ColumnName="Practica" />
+                <ScalarProperty Name="Asistencia" ColumnName="Asistencia" />
+                <ScalarProperty Name="P3" ColumnName="P3" />
+                <ScalarProperty Name="P2" ColumnName="P2" />
+                <ScalarProperty Name="P1" ColumnName="P1" />
+                <ScalarProperty Name="Materia" ColumnName="Materia" />
+                <ScalarProperty Name="Student" ColumnName="Student" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subjects">
+            <EntityTypeMapping TypeName="dbAcademicModel.Subject">
+              <MappingFragment StoreEntitySet="Subjects">
+                <ScalarProperty Name="isAproved" ColumnName="isAproved" />
+                <ScalarProperty Name="Prerequisito" ColumnName="Prerequisito" />
+                <ScalarProperty Name="Creditos" ColumnName="Creditos" />
+                <ScalarProperty Name="Materias" ColumnName="Materias" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

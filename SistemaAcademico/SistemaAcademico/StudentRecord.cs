@@ -12,19 +12,16 @@ namespace SistemaAcademico
     using System;
     using System.Collections.Generic;
     
-    public partial class Teacher
+    public partial class StudentRecord
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Teacher()
-        {
-            this.Seccions = new HashSet<Seccion>();
-        }
-    
         public int ID { get; set; }
-        public string Name { get; set; }
-        public string Enrollment { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Seccion> Seccions { get; set; }
+        public string Student { get; set; }
+        public string Materia { get; set; }
+        public Nullable<int> P1 { get; set; }
+        public Nullable<int> P2 { get; set; }
+        public Nullable<int> P3 { get; set; }
+        public Nullable<int> Asistencia { get; set; }
+        public Nullable<int> Practica { get; set; }
+        public Nullable<int> Nota { get; set; }
     }
 }

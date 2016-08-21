@@ -69,6 +69,8 @@
     <Compile Include="DAL\LoginRepositories\AccountTypeRepository.cs" />
     <Compile Include="DAL\LoginRepositories\LoginRepository.cs" />
     <Compile Include="DAL\RegistrationRepositories\GenderRepository.cs" />
+    <Compile Include="DAL\StudentSeccionRepository.cs" />
+    <Compile Include="DAL\SubjectsRepository.cs" />
     <Compile Include="Gender.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -116,19 +118,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Seccion.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Student.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="StudentSeccion.cs">
+    <Compile Include="StudentRecord.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Subject.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Teacher.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="PL\FormTeacherPanel.resx">

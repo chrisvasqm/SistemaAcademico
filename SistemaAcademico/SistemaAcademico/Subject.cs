@@ -14,20 +14,11 @@ namespace SistemaAcademico
     
     public partial class Subject
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Subject()
-        {
-            this.Seccions = new HashSet<Seccion>();
-        }
-    
         public int ID { get; set; }
-        public string Code { get; set; }
-        public string Subjects { get; set; }
-        public Nullable<int> Credits { get; set; }
-        public string Prerequisite { get; set; }
+        public string Codigo { get; set; }
+        public string Materias { get; set; }
+        public Nullable<int> Creditos { get; set; }
+        public string Prerequisito { get; set; }
         public Nullable<bool> isAproved { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Seccion> Seccions { get; set; }
     }
 }

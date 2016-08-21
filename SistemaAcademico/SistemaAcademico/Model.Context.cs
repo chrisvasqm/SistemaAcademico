@@ -27,11 +27,9 @@ namespace SistemaAcademico
     
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<AccountType> AccountTypes { get; set; }
-        public virtual DbSet<Seccion> Seccions { get; set; }
-        public virtual DbSet<StudentSeccion> StudentSeccions { get; set; }
-        public virtual DbSet<Subject> Subjects { get; set; }
-        public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<Gender> Genders { get; set; }
         public virtual DbSet<Login> Logins { get; set; }
+        public virtual DbSet<StudentRecord> StudentRecords { get; set; }
+        public virtual DbSet<Subject> Subjects { get; set; }
     }
 }

@@ -19,12 +19,8 @@ namespace SistemaAcademico.BLL
 
             return TypeOfAccount.Error;
         }
-        public List<AccountType> GetLoginType()
-        {
-            return _AccountRepository.GetAccountType();
-        }
-
-        
+        public List<AccountType> GetLoginType() {   return _AccountRepository.GetAccountType();     }  
+              
     }
 }
 
