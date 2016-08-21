@@ -27,10 +27,7 @@ namespace PL
         }
         private void btnGuardar(object sender, EventArgs e)
         {
-            var cmbValue = new StudentRecord
-            {
-                Materia = cmbMaterias.Text
-            };
+            var cmbValue = cmbMaterias.Text;
 
             dgv1.DataSource = _teacherService.GetRecordsBySubject(cmbValue);
         }
@@ -42,8 +39,45 @@ namespace PL
         }
         private void btnEvaluar_Click(object sender, EventArgs e)
         {
+            var IdValue = _teacherService.GetRecordId(txtMatricula.Text, cmbMaterias.Text);
+            //TODO: HACER UN METODO QUE MEDIANTE LA MATRICULA Y LA MATERIA TRAIGA EL ID Y ESE ID SE LO ASIGNE AL OBJETO DE ABAJO
+            var evaluationValues = new StudentRecord
+            {
+                ID = IdValue,
+                P1 = Convert.ToInt32(txtPrimerParcial.Text),
+                P2 = Convert.ToInt32(txtSegundoParcial.Text),
+                P3 = Convert.ToInt32(txtTercerParcial.Text),
+                Practica = Convert.ToInt32(txtPractica.Text),
+                Asistencia = Convert.ToInt32(txtAsistencia.Text)                
+            };
 
+            if (_teacherService.isNotOverOrUnderLimit(evaluationValues))
+            {
+                _teacherService.EvaluateStudentsByEnrollment(evaluationValues);
+            }
+            else
+            {
+                MessageBox.Show(@"Los valores a ingresar deben ser mayores que cero y no superar los siguientes valores: 
+Parciales: 20
+Practica: 30
+Asistencia: 10");
+            }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
