@@ -24,11 +24,10 @@ namespace PL
 
             dgv1.DataSource = _studentService.GetRecordsByMatricula(lblMatricula.Text);
             dgv1.Columns["ID"].Visible = false;
-            dgv1.Columns["Student"].Visible = true;
+            dgv1.Columns["Student"].Visible = false;
             dgv1.Columns["Materia"].Width = 150;
             dgv2.DataSource = _studentService.GetAllSubject();
             dgv2.Columns["ID"].Visible = false;
-            dgv2.Columns["isAproved"].Visible = false;
             dgv2.Columns["Materias"].Width = 150;
         }
         private void btnAtras_Click(object sender, EventArgs e)
@@ -55,7 +54,7 @@ namespace PL
             else 
                 _studentService.SetStudentSubject(selectionValues);
 
-            _studentService.GetRecordsByMatricula(lblMatricula.Text);
+            dgv1.DataSource = _studentService.GetRecordsByMatricula(lblMatricula.Text);
         }
     }
 }
