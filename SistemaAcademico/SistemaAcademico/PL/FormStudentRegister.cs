@@ -7,7 +7,6 @@ namespace PL
 {
     public partial class FormStudentRegister : Form
     {
-        private AcademicEntities dataBase = new AcademicEntities();
         private RegistrationService _RegistrationService = new RegistrationService();
 
         public FormStudentRegister()
@@ -16,9 +15,9 @@ namespace PL
         }
         private void FormStudentRegister_Load(object sender, EventArgs e)
         {
-            cmbGender.DataSource    = _RegistrationService.GetGenders();
+            cmbGender.DataSource = _RegistrationService.GetGenders();
             cmbGender.DisplayMember = "Genders";
-            cmbGender.ValueMember   = "ID";
+            cmbGender.ValueMember = "ID";
         }
         private void btnAtras_Click(object sender, EventArgs e)
         {
@@ -34,28 +33,29 @@ namespace PL
 
         private void CreateNewAccount()
         {
-            var loginValues = new Login  {
-                Enrollment      = txtEnrollment.Text,
-                Password        = txtPassword.Text,
-                AccountTypeID   = 1
-            };
-            var studentValues = new Student  {
-                Enrollment      = txtEnrollment.Text,
-                Name            = txtName.Text,
-                Lastname        = txtLastname.Text,
-                Age             = Convert.ToInt32(txtAge.Text),
-                Address         = txtAddress.Text,
-                IdentityCardNum = txtCardId.Text,
-                GenderID        = Convert.ToInt32(cmbGender.SelectedValue)
+            var login = new Login
+            {
+                Enrollment = txtEnrollment.Text,
+                Password = txtPassword.Text,
+                AccountTypeID = 1
             };
 
-            if (!_RegistrationService.AccountExist(loginValues))
+            var student = new Student
             {
-                _RegistrationService.CreateNewAccount(loginValues);
-                _RegistrationService.CreateStudentProfile(studentValues);
-            }
-            else
-                MessageBox.Show("Esta matricula ya esta registrada. Por favor, intente una diferente.");            
+                Enrollment = txtEnrollment.Text,
+                Name = txtName.Text,
+                Lastname = txtLastname.Text,
+                Age = Convert.ToInt32(txtAge.Text),
+                Address = txtAddress.Text,
+                IdentityCardNum = txtCardId.Text,
+                GenderID = Convert.ToInt32(cmbGender.SelectedValue)
+            };
+
+            if (_RegistrationService.AccountExist(login))
+                MessageBox.Show("Esta matricula ya esta registrada. Por favor, intente una diferente.");
+
+            _RegistrationService.CreateNewAccount(login);
+            _RegistrationService.CreateStudentProfile(student);
         }
     }
 }
