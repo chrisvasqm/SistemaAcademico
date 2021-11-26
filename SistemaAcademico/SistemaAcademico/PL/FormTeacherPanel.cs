@@ -34,6 +34,7 @@ namespace PL
             dgv1.DataSource = _teacherService.GetAllStudentsRecords();
             dgv1.Columns["ID"].Visible = false;
             dgv1.Columns["Materia"].Width = 150;
+            dgv1.Columns["isApproved"].Visible = false;
         }
 
         private void btnGuardar(object sender, EventArgs e)
