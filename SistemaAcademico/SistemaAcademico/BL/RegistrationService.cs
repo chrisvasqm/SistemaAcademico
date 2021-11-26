@@ -8,12 +8,12 @@ namespace SistemaAcademico.BL
         private GenderRepository _genderRepo = new GenderRepository();
         private AccountRepository _accountRepo = new AccountRepository();
 
-        public List<Gender> GetGenders() {   return _genderRepo.GetGender();      }
+        public List<Gender> GetGenders() { return _genderRepo.GetGender(); }
 
-        public void CreateNewAccount(Login loginValues) {   _accountRepo.CreateLoginAccount(loginValues);     }
+        public void CreateNewAccount(Login loginValues) { _accountRepo.CreateLoginAccount(loginValues); }
 
-        public bool AccountExist(Login loginValues) {   return _accountRepo.AccountExist(loginValues.Enrollment);   }
+        public bool AccountExist(Login loginValues) { return _accountRepo.AccountExist(loginValues.Enrollment); }
 
-        public void CreateStudentProfile(Student studentValues) {   _accountRepo.CreateStudentInfo(studentValues);    }
+        public void CreateStudentProfile(Student studentValues) { _accountRepo.CreateStudentInfo(studentValues); }
     }
 }
