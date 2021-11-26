@@ -10,8 +10,7 @@
 namespace SistemaAcademico
 {
     using System;
-    using System.Collections.Generic;
-    
+
     public partial class Login
     {
         public int ID { get; set; }
